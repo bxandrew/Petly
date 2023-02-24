@@ -1,0 +1,80 @@
+{
+  "id": 60089137,
+  "organization_id": "OK37",
+  "url": "https://www.petfinder.com/dog/gabby-403433-60089137/ok/oklahoma-city/oklahoma-city-animal-welfare-division-ok37/?referrer_id=3398c985-fd42-47a8-b92a-39a0be70ce6f",
+  "type": "Dog",
+  "species": "Dog",
+  "breeds": {
+    "primary": "Australian Cattle Dog / Blue Heeler",
+    "secondary": null,
+    "mixed": true,
+    "unknown": false
+  },
+  "colors": {
+    "primary": null,
+    "secondary": null,
+    "tertiary": null
+  },
+  "age": "Young",
+  "gender": "Female",
+  "size": "Medium",
+  "coat": null,
+  "attributes": {
+    "spayed_neutered": true,
+    "house_trained": false,
+    "declawed": null,
+    "special_needs": false,
+    "shots_current": true
+  },
+  "environment": {
+    "children": null,
+    "dogs": true,
+    "cats": null
+  },
+  "tags": [],
+  "name": "GABBY 403433",
+  "description": "Gabby is an adorable 9 month old, 37 pound chocolate with white Heeler mix. \n\nDUE TO OVERCROWDING, the adoption fee...",
+  "organization_animal_id": null,
+  "photos": [
+    {
+      "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60089137/1/?bust=1677207744&width=100",
+      "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60089137/1/?bust=1677207744&width=300",
+      "large": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60089137/1/?bust=1677207744&width=600",
+      "full": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60089137/1/?bust=1677207744"
+    }
+  ],
+  "primary_photo_cropped": {
+    "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60089137/1/?bust=1677207744&width=300",
+    "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60089137/1/?bust=1677207744&width=450",
+    "large": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60089137/1/?bust=1677207744&width=600",
+    "full": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60089137/1/?bust=1677207744"
+  },
+  "videos": [],
+  "status": "adoptable",
+  "status_changed_at": "2023-02-24T03:02:26+0000",
+  "published_at": "2023-02-24T03:02:25+0000",
+  "distance": null,
+  "contact": {
+    "email": "animalwelfare@okc.gov",
+    "phone": "405-297-3100  ",
+    "address": {
+      "address1": "2811 SE 29th Street",
+      "address2": null,
+      "city": "Oklahoma City",
+      "state": "OK",
+      "postcode": "73129",
+      "country": "US"
+    }
+  },
+  "_links": {
+    "self": {
+      "href": "/v2/animals/60089137"
+    },
+    "type": {
+      "href": "/v2/types/dog"
+    },
+    "organization": {
+      "href": "/v2/organizations/ok37"
+    }
+  }
+}
