@@ -1,29 +1,23 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import NavBar from "./NavBar";
-import PetCardList from "./PetCardList";
+import HomePage from "./HomePage";
+import SignupPage from "./signup/SignupPage";
+import SearchPage from "./search/SearchPage";
+import LoginPage from "./login/LoginPage";
+import PetDetailPage from "./pets/PetDetailPage";
 
 const App = () => {
   return (
     <>
-      <div>
-        <NavBar />
-      </div>
-      <div className="main-container">
-        <div className="main-container-left">
-          Main Container Component This will include the cards for my page
-          <div className="slogan-container">
-            <div>Find your new best friend</div>
-            <div>
-              Browse pets from all over the country! It only takes 60 seconds to
-              find a match
-            </div>
-          </div>
-          <div>
-            <PetCardList />
-          </div>
-        </div>
-        <div className="main-container-right">Right Container</div>
-      </div>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/petdetails" element={<PetDetailPage />} />
+      </Routes>
     </>
   );
 };

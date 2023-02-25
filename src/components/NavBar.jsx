@@ -1,19 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./navbar.scss";
 
 const NavBar = () => {
   return (
     <div className="navbar-container">
       <nav className="navbar">
-        <div className="logo">
-          <img src="./shiba.png" alt="Dog Icon" />
-          <span className="self-center text-xl">Adopt Me</span>
-        </div>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <div className="logo">
+            <img src="./shiba.png" alt="Dog Icon" />
+            <span className="title">Adopt Me</span>
+          </div>
+        </Link>
+
         <div>
-          <button>Rescue your purrfect match</button>
+          <Link to="/search">
+            <button>Rescue your purrfect match</button>
+          </Link>
         </div>
         <div className="sign-up">
-          <button>Sign-Up</button>
-          <button>Login</button>
+          <Link to="/signup">
+            <button>Sign-Up</button>
+          </Link>
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
         </div>
       </nav>
     </div>

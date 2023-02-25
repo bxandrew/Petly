@@ -1,7 +1,6 @@
 require("dotenv").config();
 const axios = require("axios");
 const express = require("express");
-const qs = require("querystring");
 const path = require("path");
 const cors = require("cors");
 const app = express();
@@ -33,6 +32,14 @@ setTimeout(() => {
   console.log(accessToken);
 }, 1000);
 // headers: { Authorization: `Bearer ${accessToken}` }
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"), (err) => {
+    if (err) {
+      console.log(err);
+    }
+  });
+});
 
 app.listen(8080);
 console.log("Listening at http://localhost:8080");

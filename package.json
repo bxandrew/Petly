@@ -13,9 +13,10 @@
   "homepage": "https://github.com/bxandrew/homeforlife#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode=development",
+    "start": "webpack --mode=development --watch",
     "dev": "webpack serve --open",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "server": "node server/server.js"
   },
   "author": "Andrew Feng",
   "license": "ISC",
