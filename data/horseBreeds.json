@@ -1,0 +1,276 @@
+{
+  "breeds": [
+    {
+      "name": "Appaloosa",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Arabian",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Belgian",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Clydesdale",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Connemara",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Curly Horse",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Donkey",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Draft",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Friesian",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Gaited",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Grade",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Haflinger",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Icelandic Horse",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Lipizzan",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Miniature Horse",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Missouri Foxtrotter",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Morgan",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Mule",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Mustang",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Paint / Pinto",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Palomino",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Paso Fino",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Percheron",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Peruvian Paso",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Pony",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Pony of the Americas",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Quarterhorse",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Rocky Mountain Horse",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Saddlebred",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Shetland Pony",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Standardbred",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Tennessee Walker",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Thoroughbred",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    },
+    {
+      "name": "Warmblood",
+      "_links": {
+        "type": {
+          "href": "/v2/types/horse"
+        }
+      }
+    }
+  ]
+}

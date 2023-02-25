@@ -22,9 +22,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: "babel-loader",
       },
-      // Second rule is to check for css files and load them with the following loaders
       {
+        // test: /\.css$/i,
         test: /\.scss$/i,
+        include: path.resolve(__dirname, "src"),
         use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],

@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "a way to find pets homes",
   "main": "index.jsx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bxandrew/homeforlife.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bxandrew/homeforlife/issues"
+  },
+  "homepage": "https://github.com/bxandrew/homeforlife#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --mode=development",
@@ -16,9 +24,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "querystring": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
     "sass": "^1.58.3"
   },
   "devDependencies": {

@@ -1,0 +1,356 @@
+{
+  "breeds": [
+    {
+      "name": "American",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "American Fuzzy Lop",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "American Sable",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Angora Rabbit",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Belgian Hare",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Beveren",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Britannia Petite",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Bunny Rabbit",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Californian",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Champagne D'Argent",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Checkered Giant",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Chinchilla",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Cinnamon",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Creme D'Argent",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Dutch",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Dwarf",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Dwarf Eared",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "English Lop",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "English Spot",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Flemish Giant",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Florida White",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "French Lop",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Harlequin",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Havana",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Himalayan",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Holland Lop",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Hotot",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Jersey Wooly",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Lilac",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Lionhead",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Lop Eared",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Mini Lop",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Mini Rex",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Netherland Dwarf",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "New Zealand",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Palomino",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Polish",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Rex",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Rhinelander",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Satin",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Silver",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Silver Fox",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Silver Marten",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    },
+    {
+      "name": "Tan",
+      "_links": {
+        "type": {
+          "href": "/v2/types/rabbit"
+        }
+      }
+    }
+  ]
+}

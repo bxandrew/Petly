@@ -1,0 +1,468 @@
+{
+  "breeds": [
+    {
+      "name": "Asian Box",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Ball Python",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Bearded Dragon",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Boa",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Boa Constrictor",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Box",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Bull",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Bullfrog",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Burmese Python",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Chameleon",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Corn / Rat",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Eastern Box",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Fire Salamander",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Fire-Bellied",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Fire-Bellied Newt",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Florida Box",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Freshwater Fish",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Frog",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Garter / Ribbon",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Gecko",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Goldfish",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Hermit Crab",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Horned Frog",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Iguana",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "King / Milk",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Leopard",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Leopard Frog",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Lizard",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Mississippi Map Turtle",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Monitor",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Mud",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Musk",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Oregon Newt",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Ornamental Box",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Other",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Paddle Tailed Newt",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Painted",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Python",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Red Foot",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Red-Eared Slider",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Russian",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Saltwater Fish",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Scorpion",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Snake",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Snapping",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Soft Shell",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Southern",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Sulcata",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Tarantula",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Three-Toed Box",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Tiger Salamander",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Toad",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Tortoise",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Tree Frog",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Turtle",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Uromastyx",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Water Dragon",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    },
+    {
+      "name": "Yellow-Bellied Slider",
+      "_links": {
+        "type": {
+          "href": "/v2/types/scales-fins-other"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  .navbar {
+    // border: 1px solid red;
+    padding: 5px;
+    background-color: antiquewhite;
+    // padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      display: flex;
+
+      img {
+        height: 2.5rem;
+        margin-right: 0.75rem;
+      }
+
+      span {
+        font-size: 1.25rem;
+        font-weight: 600;
+        align-self: center;
+      }
+    }
+
+    .sign-up {
+      display: flex;
+      gap: 5px;
+    }
+  }
+}
+
+
+.main-container {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .main-container-left {
+    // border: 2px solid green;
+    width: 50%;
+
+    .slogan-container {
+      // border: 2px solid brown;
+
+      div {
+        text-align: center;
+      }
+    }
+
+    .pet-card-container {
+      border: 2px solid red;
+      padding: 0 10px;
+      width: 800px;
+      z-index: 5;
+
+      .card-row {
+        border: 1px solid green;
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 0;
+
+        .pet-card {
+          border: 2px solid blue;
+          width: 31%;
+          height: 15rem;
+        }
+
+      }
+    }
+  }
+
+  .main-container-right {
+    border: 1px solid blue;
+    width: 50%;
+    height: auto; // Auto fill height to max? Might be bad idea
+    text-align: center;
+  }
+}

@@ -29,6 +29,9 @@ const getToken = async () => {
     });
 };
 let accessToken = getToken(); // Async token
+setTimeout(() => {
+  console.log(accessToken);
+}, 1000);
 // headers: { Authorization: `Bearer ${accessToken}` }
 
 app.listen(8080);
