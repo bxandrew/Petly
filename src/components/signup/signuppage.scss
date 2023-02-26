@@ -1,14 +1,18 @@
-
 .form-container {
   border: 1px solid red;
   text-align: center;
-  width: 250px;
+  width: 400px;
   margin: 0 auto;
   padding: 10px;
 
-  .sign-up-form {
+  div {
+    font-size: 2rem;
     display: flex;
     flex-direction: column;
 
+    input {
+      height: 2rem;
+      font-size: 2rem;
+    }
   }
 }

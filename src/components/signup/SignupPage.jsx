@@ -1,91 +1,80 @@
 import React from "react";
-import { useFormik } from "formik";
+import { Formik, Form, useField, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import "./signuppage.scss";
 
-// Validate function will be executed on every value update
-const validate = (values) => {
-  const errors = {};
-  if (!values.firstName) {
-    errors.firstName = "Required";
-  } else if (values.firstName.length > 15) {
-    errors.firstName = "Must be 15 characters or less";
-  }
-
-  if (!values.lastName) {
-    errors.lastName = "Required";
-  } else if (values.lastName.length > 20) {
-    errors.lastName = "Must be 20 characters or less";
-  }
-
-  if (!values.email) {
-    errors.email = "Required";
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = "Invalid email address";
-  }
-
-  return errors;
+const MyTextInput = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
+  // Returns .getFieldProps as field and .getFieldMeta as meta
+  return (
+    <div>
+      <label htmlFor={props.id || props.name}>{label}</label>
+      <input className="text-input" {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="text-error">{meta.error}</div>
+      ) : null}
+    </div>
+  );
 };
 
 const SignupPage = () => {
-  // The onSubmit function we passed to useFormik() will be executed only if there are no errors (i.e. if our validate function returns {}).
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      firstName: "",
-      lastName: "",
-    },
-    validate, // Our validation function, formik.errors is populated via the validation function
-
-    onSubmit: (values) => {
-      console.log(JSON.stringify(values, null, 2));
-      //JSON.stringify(value, replacer, space)
-    },
-  });
-
   return (
     <div>
       <h1>Signup page</h1>
+      <div className="form-container">
+        <Formik
+          initialValues={{ email: "", firstName: "", lastName: "" }}
+          validationSchema={Yup.object({
+            firstName: Yup.string()
+              .max(15, "Must be 15 characters or less")
+              .required("First Name is required"),
+            lastName: Yup.string()
+              .max(20, "Must be 20 characters or less")
+              .required("Last Name is required"),
+            email: Yup.string()
+              .email("Invalid email address")
+              .required("Email is required"),
+            password: Yup.string()
+              .required("Password is required")
+              .matches(
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+                "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+              ),
+          })}
+          onSubmit={(values, { setSubmitting }) => {
+            console.log(JSON.stringify(values, null, 2));
+            setSubmitting(false); // To finish off the cycle
+          }}
+        >
+          {(formik) => (
+            <Form>
+              <div>
+                <label htmlFor="email">Email Address</label>
+                <Field
+                  name="email"
+                  type="email"
+                  placeholder="andrew@andrew.com"
+                />
+                <ErrorMessage name="email" />
+              </div>
+              <div>
+                <label htmlFor="firstName">First Name</label>
+                <Field name="firstName" type="text" placeholder="andrew" />
+                <ErrorMessage name="firstName" />
+              </div>
+              <div>
+                <label htmlFor="lastName">Last Name</label>
+                <Field name="lastName" type="text" placeholder="test" />
+                <ErrorMessage name="lastName" />
+              </div>
 
-      <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="email">Email Address</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          onChange={formik.handleChange} // Change handler for each input
-          onBlur={formik.handleBlur}
-          value={formik.values.email} // Formik's current values
-        />
-        {formik.touched.email && formik.errors.email ? (
-          <div>{formik.errors.email}</div>
-        ) : null}
-        <label htmlFor="firstName">First Name</label>
-        <input
-          id="firstName"
-          name="firstName"
-          type="text"
-          onChange={formik.handleChange} // Change handler for each input
-          onBlur={formik.handleBlur}
-          value={formik.values.firstName} // Formik's current values
-        />
-        {formik.touched.firstName && formik.errors.firstName ? (
-          <div>{formik.errors.firstName}</div>
-        ) : null}
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          id="lastName"
-          name="lastName"
-          type="text"
-          onChange={formik.handleChange} // Change handler for each input
-          onBlur={formik.handleBlur}
-          value={formik.values.lastName} // Formik's current values
-        />
-        {formik.touched.lastName && formik.errors.lastName ? (
-          <div>{formik.errors.lastName}</div>
-        ) : null}
+              <MyTextInput label="Password" name="password" type="password" />
 
-        <button type="submit">Submit</button>
-      </form>
+              <button type="submit">Submit</button>
+            </Form>
+          )}
+        </Formik>
+      </div>
     </div>
   );
 };
