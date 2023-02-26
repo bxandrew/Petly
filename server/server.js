@@ -27,10 +27,10 @@ const getToken = async () => {
       return data.data.access_token;
     });
 };
-let accessToken = getToken(); // Async token
-setTimeout(() => {
-  console.log(accessToken);
-}, 1000);
+// let accessToken = getToken(); // Async token
+// setTimeout(() => {
+//   console.log(accessToken);
+// }, 1000);
 // headers: { Authorization: `Bearer ${accessToken}` }
 
 app.get("/*", (req, res) => {

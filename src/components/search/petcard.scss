@@ -1,0 +1,39 @@
+.pet-card {
+  display: flex;
+  flex-direction: column;
+
+  .pet-card-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    border-bottom: 2px solid brown;
+
+    .profile-pic {
+      border: 2px solid green;
+      border-radius: 1rem;
+      width: 150px;
+      height: 150px;
+      margin: 10px 0;
+    }
+
+    .animal-name {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+  }
+
+  .pet-card-bottom {
+    display: flex;
+    flex-grow: 1;
+    padding: 0 5px;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      height: 90%;
+      width: 10%;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.results-container {
+  height: 100%;
+  border: 5px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pet-card-container {
+  border: 2px solid red;
+  padding: 0 10px;
+  width: 800px;
+  z-index: 5;
+
+  .card-row {
+    border: 1px solid green;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+
+    .pet-card {
+      border: 2px solid blue;
+      width: 31%;
+      height: 20rem;
+    }
+  }
+}
