@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
-import PetCardList from "./search/PetCardList";
 
 const HomePage = () => {
   return (

@@ -1,0 +1,92 @@
+{
+  "id": 60178702,
+  "organization_id": "IN498",
+  "url": "https://www.petfinder.com/dog/cowboy-60178702/in/danville/hendricks-county-animal-control-shelter-in498/?referrer_id=3398c985-fd42-47a8-b92a-39a0be70ce6f",
+  "type": "Dog",
+  "species": "Dog",
+  "breeds": {
+    "primary": "Terrier",
+    "secondary": null,
+    "mixed": true,
+    "unknown": false
+  },
+  "colors": {
+    "primary": "Tricolor (Brown, Black, & White)",
+    "secondary": null,
+    "tertiary": null
+  },
+  "age": "Adult",
+  "gender": "Male",
+  "size": "Small",
+  "coat": "Short",
+  "attributes": {
+    "spayed_neutered": true,
+    "house_trained": true,
+    "declawed": null,
+    "special_needs": false,
+    "shots_current": true
+  },
+  "environment": {
+    "children": true,
+    "dogs": null,
+    "cats": null
+  },
+  "tags": [],
+  "name": "Cowboy",
+  "description": "Cowboy is a 2 year old male terrier mix who came to us as a stray. Can you believe no...",
+  "organization_animal_id": "49126",
+  "photos": [
+    {
+      "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/1/?bust=1677460475&width=100",
+      "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/1/?bust=1677460475&width=300",
+      "large": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/1/?bust=1677460475&width=600",
+      "full": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/1/?bust=1677460475"
+    },
+    {
+      "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/2/?bust=1677460476&width=100",
+      "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/2/?bust=1677460476&width=300",
+      "large": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/2/?bust=1677460476&width=600",
+      "full": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/2/?bust=1677460476"
+    },
+    {
+      "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/3/?bust=1677460476&width=100",
+      "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/3/?bust=1677460476&width=300",
+      "large": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/3/?bust=1677460476&width=600",
+      "full": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/3/?bust=1677460476"
+    }
+  ],
+  "primary_photo_cropped": {
+    "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/1/?bust=1677460475&width=300",
+    "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/1/?bust=1677460475&width=450",
+    "large": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/1/?bust=1677460475&width=600",
+    "full": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/60178702/1/?bust=1677460475"
+  },
+  "videos": [],
+  "status": "adoptable",
+  "status_changed_at": "2023-02-27T01:14:39+0000",
+  "published_at": "2023-02-27T01:14:38+0000",
+  "distance": null,
+  "contact": {
+    "email": "ACHelp@co.hendricks.in.us",
+    "phone": "(317) 745-9250",
+    "address": {
+      "address1": "250 E. Campus Blvd",
+      "address2": null,
+      "city": "Danville",
+      "state": "IN",
+      "postcode": "46122",
+      "country": "US"
+    }
+  },
+  "_links": {
+    "self": {
+      "href": "/v2/animals/60178702"
+    },
+    "type": {
+      "href": "/v2/types/dog"
+    },
+    "organization": {
+      "href": "/v2/organizations/in498"
+    }
+  }
+},

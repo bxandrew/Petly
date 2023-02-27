@@ -33,46 +33,39 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use("/auth", auth);
+app.use("/auth", auth);
 
-// ----- Routes ----- //
-let accessToken = [];
-const getToken = async (accessToken) => {
+//----- Token -----//
+let token;
+const getToken = async () => {
   const body = {
     grant_type: "client_credentials",
     client_id: process.env.CLIENTID,
     client_secret: process.env.CLIENTSECRET,
   };
 
-  let result = await axios.post(
-    "https://api.petfinder.com/v2/oauth2/token",
-    body
-  );
+  // Result will be the access_token in string form
+  let result = await axios
+    .post("https://api.petfinder.com/v2/oauth2/token", body)
+    .then(({ data }) => {
+      return data.access_token;
+    });
 
-  // console.log(result.data.access_token);
-  const token = result.data.access_token;
-  accessToken.push(token);
-  return token;
+  token = result;
 };
-getToken(accessToken); // Async token
-// setTimeout(() => {
-//   console.log(accessToken);
-// }, 1000);
-// axios.defaults.headers.common["Authorization"] = accessToken;
-// headers: {
-//   Authorization: `Bearer ${accessToken}`;
-// }
+getToken(); // Async token
+// ==================================================
 
+// ----- Start of routes ----- //
 app.get("/animals", async (req, res) => {
   await axios
     .get("http://api.petfinder.com/v2/animals", {
       headers: {
-        Authorization: `Bearer ${accessToken[0]}`,
+        Authorization: `Bearer ${token}`,
       },
     })
-    .then((data) => {
-      // console.log(data.data);
-      res.status(200).send(data.data);
+    .then(({ data }) => {
+      res.status(200).send(data);
     })
     .catch(() => {
       res.status(404).json({ message: "Error retrieving animals" });
@@ -86,15 +79,6 @@ app.get("/*", (req, res) => {
     }
   });
 });
-
-// app.get("/animals", async (req, res) => {
-//   await axios.get("https://api.petfinder.com/v2/animals").then((data) => {
-//     console.log(data);
-//     return res.status(200).json(data);
-//   });
-
-//   // return res.status(404).json({ message: "Error retrieving animals" });
-// });
 
 app.listen(8080);
 console.log("Listening at http://localhost:8080");

@@ -3,10 +3,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./searchpage.scss";
 
-const SearchPage = () => {
+const SearchPage = ({ setAnimalData }) => {
   const handleSearch = () => {
-    axios.get("http://localhost:8080/animals").then((data) => {
-      console.log(data);
+    axios.get("http://localhost:8080/animals").then(({ data }) => {
+      console.log(data.animals);
+      setAnimalData(data.animals);
     });
   };
 

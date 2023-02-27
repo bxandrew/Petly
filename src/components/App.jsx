@@ -6,14 +6,12 @@ import LoginSignupPage from "./signup/LoginSignupPage";
 import SearchPage from "./search/SearchPage";
 import PetDetailPage from "./pets/PetDetailPage";
 import ResultsPage from "./search/ResultsPage";
+import testData from "./testdata";
+// console.log("Our test data", testData);
 
 const App = () => {
-  const [test, setTest] = useState("");
-  console.log(test);
-
-  const handleClick = (e, value) => {
-    setTest(value);
-  };
+  const [animalData, setAnimalData] = useState(testData);
+  // console.log("Data received in App.jsx", animalData);
 
   return (
     <div className="app-container">
@@ -21,12 +19,15 @@ const App = () => {
       <div className="content-container">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/login_signup" element={<LoginSignupPage />} />
           <Route
-            path="/login_signup"
-            element={<LoginSignupPage test={test} />}
+            path="/search"
+            element={<SearchPage setAnimalData={setAnimalData} />}
           />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/results" element={<ResultsPage />} />
+          <Route
+            path="/results"
+            element={<ResultsPage animalData={animalData} />}
+          />
           <Route path="/petdetails" element={<PetDetailPage />} />
           {/* <Route path="/*" element={<ErrorRoute />} /> */}
         </Routes>
