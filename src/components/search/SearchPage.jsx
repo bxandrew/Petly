@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./searchpage.scss";
 
-const SearchPage = ({ setAnimalData }) => {
+const SearchPage = ({ animalData, setAnimalData }) => {
+  const [page, setPage] = useState(0);
+  // Everytime page is reset to 0, (on every new search), reset our animalData
+  useEffect(() => {
+    setAnimalData([]);
+  }, []);
+
+  //Lift this state up so that we can do pagination of pets
   const handleSearch = () => {
-    axios.get("http://localhost:8080/animals").then(({ data }) => {
-      console.log(data.animals);
-      setAnimalData(data.animals);
-    });
+    console.log("inside handle", page);
+    axios
+      .get("http://localhost:8080/animals", {
+        params: {
+          page: page + 1,
+          limit: 50,
+        },
+      })
+      .then(({ data }) => {
+        console.log(data.animals);
+        setAnimalData([...animalData, ...data.animals]);
+        setPage(data.pagination.current_page);
+      });
   };
 
   return (

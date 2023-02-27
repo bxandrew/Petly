@@ -58,9 +58,12 @@ getToken(); // Async token
 
 // ----- Start of routes ----- //
 app.get("/animals", async (req, res) => {
-  console.log(token);
+  const { query } = req;
+  console.log(query);
+
   await axios
     .get("http://api.petfinder.com/v2/animals", {
+      params: query,
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -22,7 +22,12 @@ const App = () => {
           <Route path="/login_signup" element={<LoginSignupPage />} />
           <Route
             path="/search"
-            element={<SearchPage setAnimalData={setAnimalData} />}
+            element={
+              <SearchPage
+                animalData={animalData}
+                setAnimalData={setAnimalData}
+              />
+            }
           />
           <Route
             path="/results"
