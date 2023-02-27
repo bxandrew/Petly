@@ -19,11 +19,8 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="sign-up">
-          <Link to="/signup">
-            <button>Sign-Up</button>
-          </Link>
-          <Link to="/login">
-            <button>Login</button>
+          <Link to="/login_signup">
+            <button>Login / Sign-Up</button>
           </Link>
         </div>
       </nav>

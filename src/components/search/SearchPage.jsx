@@ -1,8 +1,15 @@
 import React from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "./searchpage.scss";
 
 const SearchPage = () => {
+  const handleSearch = () => {
+    axios.get("http://localhost:8080/animals").then((data) => {
+      console.log(data);
+    });
+  };
+
   return (
     <div className="search-container">
       <h1>What type of friend are you looking for?</h1>
@@ -29,7 +36,7 @@ const SearchPage = () => {
           <div>
             Button Row
             <Link to="/results">
-              <button>Search</button>
+              <button onClick={handleSearch}>Search</button>
             </Link>
             <button>Reset</button>
           </div>

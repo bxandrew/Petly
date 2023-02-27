@@ -79,3 +79,49 @@
 //     onSubmit={values => console.log(JSON.stringify(values, null,))}
 // >
 // </Formik>
+
+{
+  /* <div>
+<label htmlFor="email">Email Address</label>
+<Field
+  name="email"
+  type="email"
+  placeholder="andrew@andrew.com"
+/>
+<ErrorMessage name="email" />
+</div>
+<div>
+<label htmlFor="firstName">First Name</label>
+<Field name="firstName" type="text" placeholder="andrew" />
+<ErrorMessage name="firstName" />
+</div>
+<div>
+<label htmlFor="lastName">Last Name</label>
+<Field name="lastName" type="text" placeholder="test" />
+<ErrorMessage name="lastName" />
+</div> */
+}
+
+// Making reusable form inputs using formik
+
+const MyTextInput = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
+  // Returns .getFieldProps as field and .getFieldMeta as meta
+  return (
+    <div>
+      <label htmlFor={props.name}>{label}</label>
+      <input className="text-input" {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="text-error">{meta.error}</div>
+      ) : null}
+    </div>
+  );
+};
+
+<Form>
+  <MyTextInput label="Email Address" name="email" type="email" />
+  <MyTextInput label="First Name" name="firstName" type="text" />
+  <MyTextInput label="Last Name" name="lastName" type="text" />
+  <MyTextInput label="Password" name="password" type="password" />
+  <button type="submit">Submit</button>
+</Form>;
