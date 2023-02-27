@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 300px;
+    min-height: 300px;
     border-bottom: 2px solid brown;
 
     .profile-pic {
@@ -29,19 +29,62 @@
       font-size: 2rem;
       margin-bottom: 10px;
     }
+
+    .description {
+      border: 1px solid red;
+      margin: 5px 0;
+      text-align: center;
+    }
   }
 
   .pet-card-bottom {
     display: flex;
-    flex-grow: 1;
+    gap: 10px;
+    // flex-grow: 1;
+    height: 100px;
     padding: 0 5px;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
     font-size: 0.75rem;
 
-    button {
+    .details {
+      all: unset;
+      cursor: pointer;
       height: 90%;
       width: 10%;
+      font-size: 1.5rem;
+      flex-grow: 0;
+      display: flex;
+      align-items: center;
+      border: 2px solid brown;
+    }
+
+    .details:hover {
+      background-color: yellow;
+    }
+
+    .details:active {
+      background-color: blue;
+    }
+
+    div {
+      flex-grow: 1;
+      // border: 1px solid yellow;
+      margin-top: 5px;
+    }
+
+    div .contact {
+      display: flex;
+      padding: 5px 0;
+      justify-content: center;
+      font-size: 0.8rem;
+      border: 1px solid brown;
+    }
+
+    div div {
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
   }
 }

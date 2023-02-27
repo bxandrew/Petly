@@ -9,20 +9,16 @@
 
 .pet-card-container {
   border: 2px solid red;
-  padding: 0 10px;
-  width: 800px;
+  // padding: 0 10px;
+  width: 825px;
   z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
-  .card-row {
-    border: 1px solid green;
-    display: flex;
-    justify-content: space-between;
-    margin: 15px 0;
-
-    .pet-card {
-      border: 2px solid blue;
-      width: 31%;
-      height: 25rem;
-    }
+  .pet-card {
+    border: 2px solid blue;
+    margin: 10px 5px;
+    width: 31%;
   }
 }

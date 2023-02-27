@@ -58,6 +58,7 @@ getToken(); // Async token
 
 // ----- Start of routes ----- //
 app.get("/animals", async (req, res) => {
+  console.log(token);
   await axios
     .get("http://api.petfinder.com/v2/animals", {
       headers: {

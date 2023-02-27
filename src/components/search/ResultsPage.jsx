@@ -16,36 +16,10 @@ const ResultsPage = ({ animalData }) => {
     }
   });
 
-  const rowElements = [];
-  for (let i = 0; i < petCardElements.length; i += 3) {
-    rowElements.push(
-      <div className="card-row" key={i}>
-        {petCardElements[i]} {petCardElements[i + 1]} {petCardElements[i + 2]}
-      </div>
-    );
-  }
-
   return (
     <div className="results-container">
       <h1>Your ready to adopt matches!</h1>
-      <div className="pet-card-container">
-        {rowElements}
-        {/* <div className="card-row">
-          <PetCard />
-          <PetCard />
-          <PetCard />
-        </div>
-        <div className="card-row">
-          <PetCard />
-          <PetCard />
-          <PetCard />
-        </div>
-        <div className="card-row">
-          <PetCard />
-          <PetCard />
-          <PetCard />
-        </div> */}
-      </div>
+      <div className="pet-card-container">{petCardElements}</div>
     </div>
   );
 };
