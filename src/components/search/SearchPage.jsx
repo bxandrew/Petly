@@ -3,27 +3,27 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./searchpage.scss";
 
-const SearchPage = ({ animalData, setAnimalData }) => {
-  const [page, setPage] = useState(0);
-  // Everytime page is reset to 0, (on every new search), reset our animalData
+const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
+  // Everytime we reach the search page, reset our animalData
   useEffect(() => {
     setAnimalData([]);
   }, []);
 
-  //Lift this state up so that we can do pagination of pets
+  // Do pagination by giving the pagination link to results
   const handleSearch = () => {
-    console.log("inside handle", page);
     axios
       .get("http://localhost:8080/animals", {
         params: {
-          page: page + 1,
-          limit: 50,
+          limit: 100,
         },
       })
       .then(({ data }) => {
         console.log(data.animals);
+        // Spreading prev data with new animal data
         setAnimalData([...animalData, ...data.animals]);
-        setPage(data.pagination.current_page);
+        setNextPage({ href: data.pagination._links.next.href });
+        //data.pagination._links.next.href = link
+        console.log(data.pagination);
       });
   };
 
@@ -32,10 +32,18 @@ const SearchPage = ({ animalData, setAnimalData }) => {
       <h1>What type of friend are you looking for?</h1>
       <div className="search-form-container">
         <div className="search-form-top">
-          <div>Circle picture</div>
-          <div>Circle picture</div>
-          <div>Circle picture</div>
-          <div>Circle picture</div>
+          <div className="icon-container">
+            <img src="./dog-icon.png" />
+          </div>
+          <div className="icon-container">
+            <img src="./cat-icon.png" />
+          </div>
+          <div className="icon-container">
+            <img src="./bird-icon.png" />
+          </div>
+          <div className="icon-container">
+            <img src="./chinchilla-icon.png" />
+          </div>
         </div>
         <div className="search-form-bottom">
           <div>

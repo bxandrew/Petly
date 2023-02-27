@@ -1,28 +1,43 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./navbar.scss";
 
-const NavBar = () => {
+const NavBar = ({ isLoggedIn, setIsLoggedIn, setSession }) => {
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    setSession("");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
+
   return (
     <div className="navbar-container">
       <nav className="navbar">
         <Link to="/" style={{ textDecoration: "none" }}>
           <div className="logo">
-            <img src="./shiba.png" alt="Dog Icon" />
+            <img src="./logo.png" alt="Dog Icon" />
             <span className="title">Adopt Me</span>
           </div>
         </Link>
-
-        <div>
-          <Link to="/search">
-            <button>Rescue your purrfect match</button>
-          </Link>
-        </div>
-        <div className="sign-up">
-          <Link to="/login_signup">
-            <button>Login / Sign-Up</button>
-          </Link>
-        </div>
+        {isLoggedIn === false ? (
+          <div className="sign-up">
+            <Link to="/search">
+              <button>Search</button>
+            </Link>
+            <Link to="/login_signup">
+              <button>Login / Sign-Up</button>
+            </Link>
+          </div>
+        ) : (
+          <div className="sign-up">
+            <Link to="/search">
+              <button>Search</button>
+            </Link>
+            <button>My List</button>
+            <button onClick={handleSignOut}>Sign Out</button>
+          </div>
+        )}
       </nav>
     </div>
   );

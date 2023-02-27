@@ -4,7 +4,7 @@ import { MdMarkEmailRead } from "react-icons/md";
 import { TiLocation, TiArrowBack, TiExport } from "react-icons/ti";
 import "./petcard.scss";
 
-const PetCard = ({ animal }) => {
+const PetCard = ({ animal, handleAddToList }) => {
   const [showMore, setShowMore] = useState(false);
   const { id, age, type, photos, size, status, name, contact, description } =
     animal;
@@ -20,13 +20,14 @@ const PetCard = ({ animal }) => {
         <div className="animal-name">{name}</div>
         <div>
           <button onClick={() => setShowMore(!showMore)}>Learn More</button>
+          <button onClick={() => handleAddToList(animal)}>Add to List</button>
         </div>
         {showMore ? <div className="description">{description}</div> : null}
       </div>
       <div className="pet-card-bottom">
-        <div>
+        <div className="contact-container">
           <div className="contact">Contact Information</div>
-          <div>
+          <div className="email">
             {MdMarkEmailRead()} {contact.email}
           </div>
           <div>
@@ -37,7 +38,9 @@ const PetCard = ({ animal }) => {
             {contact.address.postcode}
           </div>
         </div>
-        <button className="details">{TiExport()}</button>
+        <div className="button-container">
+          <button className="details">{TiExport()}</button>
+        </div>
       </div>
     </div>
   );

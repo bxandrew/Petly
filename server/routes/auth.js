@@ -17,7 +17,7 @@ router.post("/login_signup", (req, res, next) => {
         return res.status(400).json({ errors: err });
       }
 
-      res.status(200).json({ success: `logged in ${user.id}` });
+      res.status(200).json({ success: `${user.id}` });
     });
   })(req, res, next);
 });

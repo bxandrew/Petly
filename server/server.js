@@ -10,6 +10,8 @@ const mongoose = require("mongoose");
 const passport = require("./passport/setup");
 const auth = require("./routes/auth");
 
+const List = require("../database/listModel");
+
 const db = require("../database/db");
 db.connect();
 
@@ -52,6 +54,7 @@ const getToken = async () => {
     });
 
   token = result;
+  // console.log(token);
 };
 getToken(); // Async token
 // ==================================================
@@ -76,12 +79,67 @@ app.get("/animals", async (req, res) => {
     });
 });
 
+app.get("/animals/more", async (req, res) => {
+  const { href } = req.query;
+  console.log(req.query);
+
+  await axios
+    .get(`http://api.petfinder.com${href}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then(({ data }) => {
+      res.status(200).send(data);
+    })
+    .catch(() => {
+      res.status(404).json({ message: "Error retrieving more animals" });
+    });
+});
+
+// Get the animals for My List Page
+app.get("/animals/mylist", async (req, res) => {
+  // Find the animals by using our userId to find our list stored in mongodb
+  console.log("I am in the myList route");
+  res.send("Hello");
+});
+
+//------ Last route to render our react page no matter what ----- //
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"), (err) => {
     if (err) {
       console.log(err);
     }
   });
+});
+
+// Route to add animals to our list
+app.post("/animals", async (req, res) => {
+  // If we cant find an existing entry in our db, create one
+  const { userId, animal } = req.body.data;
+  console.log(userId);
+
+  // Push our animal into our database if we have an already existing instance list
+  let result = await List.findOneAndUpdate(
+    { userId: userId },
+    { $push: { animalList: animal } }
+  )
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  // If we do not already have an entry for our userId, make a new one
+  if (result === null) {
+    const newList = new List({ userId: userId, animalList: [animal] });
+    newList.save().then(() => {
+      console.log("created new db entry");
+    });
+  }
+
+  res.status(200).send("Success");
 });
 
 app.listen(8080);

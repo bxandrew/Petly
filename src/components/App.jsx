@@ -10,28 +10,54 @@ import testData from "./testdata";
 // console.log("Our test data", testData);
 
 const App = () => {
-  const [animalData, setAnimalData] = useState(testData);
-  // console.log("Data received in App.jsx", animalData);
+  const [animalData, setAnimalData] = useState(testData.animals);
+  const [nextPage, setNextPage] = useState({}); //takes an object with href and string
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Set login state
+  const [session, setSession] = useState("");
+  console.log(session);
+  console.log(isLoggedIn);
+  // console.log("Next page state data:", nextPage);
 
   return (
     <div className="app-container">
-      <NavBar />
+      <NavBar
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+        setSession={setSession}
+      />
       <div className="content-container">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login_signup" element={<LoginSignupPage />} />
+          <Route
+            path="/login_signup"
+            element={
+              <LoginSignupPage
+                setIsLoggedIn={setIsLoggedIn}
+                setSession={setSession}
+              />
+            }
+          />
           <Route
             path="/search"
             element={
               <SearchPage
                 animalData={animalData}
                 setAnimalData={setAnimalData}
+                setNextPage={setNextPage}
               />
             }
           />
           <Route
             path="/results"
-            element={<ResultsPage animalData={animalData} />}
+            element={
+              <ResultsPage
+                animalData={animalData}
+                setAnimalData={setAnimalData}
+                nextPage={nextPage}
+                setNextPage={setNextPage}
+                session={session}
+              />
+            }
           />
           <Route path="/petdetails" element={<PetDetailPage />} />
           {/* <Route path="/*" element={<ErrorRoute />} /> */}

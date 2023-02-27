@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, useField, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -19,19 +19,24 @@ const MyTextInput = ({ label, ...props }) => {
   );
 };
 
-const LoginSignupPage = () => {
+const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
+  const [showError, setShowError] = useState(false);
   const navigate = useNavigate(); // Custom hook from react-router-dom
   const handleSubmit = (values) => {
     axios
       .post("http://localhost:8080/auth/login_signup", values)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data.success);
+        setSession(res.data.success);
+        setIsLoggedIn(true);
+        setShowError(false);
         navigate("/"); //navigates you back to home page
         // Todo: check to see if list has items, if it does go to list
         // Successful login should take you to either search or my list
       })
-      .catch((err) => {
-        console.log(err.response.data);
+      .catch(() => {
+        setShowError(true);
+        console.log("Error logging in");
       });
   };
 
@@ -56,7 +61,7 @@ const LoginSignupPage = () => {
               .required("Password is required"),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            console.log("Our values are: ", JSON.stringify(values, null, 2));
+            // console.log("Our values are: ", JSON.stringify(values, null, 2));
             handleSubmit(values);
             setSubmitting(false); // To finish off the cycle
           }}
@@ -66,6 +71,11 @@ const LoginSignupPage = () => {
               <MyTextInput label="Email Address" name="email" type="email" />
               <MyTextInput label="Password" name="password" type="password" />
               <button type="submit">Submit</button>
+              {showError ? (
+                <div className="error-message">
+                  Incorrect Username/Password or User Already Exists
+                </div>
+              ) : null}
             </Form>
           )}
         </Formik>
