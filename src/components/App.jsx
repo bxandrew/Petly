@@ -6,6 +6,7 @@ import LoginSignupPage from "./signup/LoginSignupPage";
 import SearchPage from "./search/SearchPage";
 import PetDetailPage from "./pets/PetDetailPage";
 import ResultsPage from "./search/ResultsPage";
+import MyListPage from "./search/MyListPage";
 import testData from "./testdata";
 // console.log("Our test data", testData);
 
@@ -59,6 +60,7 @@ const App = () => {
               />
             }
           />
+          <Route path="/mylist" element={<MyListPage session={session} />} />
           <Route path="/petdetails" element={<PetDetailPage />} />
           {/* <Route path="/*" element={<ErrorRoute />} /> */}
         </Routes>

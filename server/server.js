@@ -99,9 +99,19 @@ app.get("/animals/more", async (req, res) => {
 
 // Get the animals for My List Page
 app.get("/animals/mylist", async (req, res) => {
-  // Find the animals by using our userId to find our list stored in mongodb
-  console.log("I am in the myList route");
-  res.send("Hello");
+  const { userId } = req.query;
+  console.log(userId);
+  let results = await List.find({ userId: userId });
+  console.log(results);
+
+  if (!results.length) {
+    res.status(404).json({ error: "Bad request" });
+    return;
+  }
+  //Results is an array of mongodb objects
+  // Only give back the animalList
+
+  res.status(200).json({ data: results[0].animalList });
 });
 
 //------ Last route to render our react page no matter what ----- //
@@ -140,6 +150,23 @@ app.post("/animals", async (req, res) => {
   }
 
   res.status(200).send("Success");
+});
+
+app.put("/animals/mylist", async (req, res) => {
+  const { userId, animalList } = req.body.data;
+
+  await List.findOneAndUpdate({ userId: userId }, { animalList: animalList });
+
+  // Return the new list
+  let results = await List.find({ userId: userId });
+  console.log(results);
+
+  if (!results.length) {
+    res.status(404).json({ error: "Bad request" });
+    return;
+  }
+
+  res.status(200).json({ data: results[0].animalList });
 });
 
 app.listen(8080);

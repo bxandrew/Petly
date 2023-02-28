@@ -34,7 +34,9 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, setSession }) => {
             <Link to="/search">
               <button>Search</button>
             </Link>
-            <button>My List</button>
+            <Link to="/mylist">
+              <button>My List</button>
+            </Link>
             <button onClick={handleSignOut}>Sign Out</button>
           </div>
         )}
