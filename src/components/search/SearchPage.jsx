@@ -73,6 +73,8 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
           limit: 100,
           type: type,
           location: values.location,
+          breed: values.breed,
+          gender: values.gender,
         },
       })
       .then(({ data }) => {
@@ -124,6 +126,7 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
           <Formik
             initialValues={{
               location: "",
+              gender: "male, female",
             }}
             validationSchema={Yup.object({
               location: Yup.number()
@@ -143,6 +146,14 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
           >
             <Form>
               <MyTextInput label="Location" name="location" type="text" />
+              <>
+                <label htmlFor="breed">Select a Gender</label>
+                <Field as="select" name="gender" isClearable={true}>
+                  <option value="male, female">No Preference</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </Field>
+              </>
               {type ? (
                 <>
                   <label htmlFor="breed">Select a Breed</label>

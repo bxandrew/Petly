@@ -30,6 +30,54 @@
       text-align: center;
       font-size: 2rem;
       margin-bottom: 10px;
+      word-break: break-all;
+      min-height: 2rem;
+      max-height: 4rem;
+      overflow-y: auto;
+    }
+
+    .animal-gender-size {
+      display: flex;
+      gap: 5px;
+      width: 90%;
+      justify-content: center;
+      margin-bottom: 5px;
+
+      .gender-male {
+        background-color: lightblue;
+        border-radius: 2rem;
+        padding: 2.5px 10px;
+        text-align: center;
+        align-self: center;
+        width: 40%;
+      }
+
+      .gender-female {
+        background-color: pink;
+        border-radius: 2rem;
+        padding: 2.5px 10px;
+        text-align: center;
+        width: 40%;
+      }
+
+      .animal-size {
+        background-color: blanchedalmond;
+        border-radius: 2rem;
+        padding: 2.5px 10px;
+        text-align: center;
+        width: 40%;
+      }
+    }
+
+    .animal-breed {
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      background-color: orange;
+      border-radius: 2rem;
+      padding: 2.5px 10px;
+      text-align: center;
+      width: 90%;
     }
 
     .description {
@@ -46,13 +94,14 @@
     gap: 10px;
     min-height: 100px;
     padding: 5px 5px;
-    align-items: start;
+    align-items: start; // To move contact container
     font-size: 0.75rem;
     flex-grow: 1;
 
     .contact-container {
       display: flex;
       flex-direction: column;
+      // justify-content: center;
       gap: 5px;
       // height: 100%;
       min-height: 100px;
@@ -61,7 +110,7 @@
 
     .button-container {
       // border: 2px solid yellow;
-      height: 100%;
+      height: 100px;
       display: flex;
       justify-content: center;
       align-items: center;

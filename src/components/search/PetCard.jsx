@@ -6,10 +6,30 @@ import "./petcard.scss";
 
 const PetCard = ({ animal, handleAddToList }) => {
   const [showMore, setShowMore] = useState(false);
-  const { id, age, type, photos, size, status, name, contact, description } =
-    animal;
+  const {
+    id,
+    age,
+    type,
+    photos,
+    size,
+    status,
+    name,
+    contact,
+    description,
+    gender,
+  } = animal;
 
+  const primaryBreed = animal.breeds.primary;
+  const secBreed = animal.breeds.secondary;
   const profilePhoto = animal.primary_photo_cropped.small;
+
+  const genderDiv = () => {
+    return gender === "Male" ? (
+      <div className="gender-male">{gender}</div>
+    ) : (
+      <div className="gender-female">{gender}</div>
+    );
+  };
 
   return (
     <div className="pet-card">
@@ -18,6 +38,13 @@ const PetCard = ({ animal, handleAddToList }) => {
           <img src={profilePhoto} />
         </div>
         <div className="animal-name">{name}</div>
+        <div className="animal-breed">
+          {primaryBreed} {secBreed ? `/ ${secBreed}` : ""}
+        </div>
+        <div className="animal-gender-size">
+          {genderDiv()}
+          <div className="animal-size">{size}</div>
+        </div>
         {description ? (
           <div>
             <button onClick={() => setShowMore(!showMore)}>
