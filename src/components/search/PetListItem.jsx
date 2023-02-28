@@ -11,9 +11,9 @@ const PetListItem = ({ animal, handleDelete }) => {
 
   const location = `${address.city}, ${address.state} ${address.postcode}`;
   return (
-    <div>
+    <div className="my-list-animal-item">
       <div>
-        <img src={profilePic} />
+        <img src={profilePic} className="my-list-profile-pic" />
       </div>
       <div>
         <div>{name}</div>

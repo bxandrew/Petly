@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import PetCard from "./PetCard";
-import "./resultspage.scss";
+import "./petcard.scss";
 
 const ResultsPage = ({
   animalData,

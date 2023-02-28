@@ -13,7 +13,6 @@ const dogBreedsList = dogBreeds.breeds.map((breed) => breed.name);
 const catBreedsList = catBreeds.breeds.map((breed) => breed.name);
 const birdBreedsList = birdBreeds.breeds.map((breed) => breed.name);
 const chinchillaBreedsList = chinchillaBreeds.breeds.map((breed) => breed.name);
-
 const breedOptions = (breedList) => {
   const options = breedList.map((breed) => {
     return (
@@ -30,8 +29,8 @@ const MyTextInput = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   // Returns .getFieldProps as field and .getFieldMeta as meta
   return (
-    <div>
-      <label htmlFor={props.name}>{label}</label>
+    <div className="search-location">
+      <label htmlFor={props.name}>{label}: </label>
       <input className="text-input" {...field} {...props} />
       {meta.touched && meta.error ? (
         <div className="text-error">{meta.error}</div>
@@ -126,7 +125,7 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
           <Formik
             initialValues={{
               location: "",
-              gender: "male, female",
+              gender: "",
             }}
             validationSchema={Yup.object({
               location: Yup.number()
@@ -144,19 +143,19 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
               navigate("/results");
             }}
           >
-            <Form>
+            <Form className="search-form-terms">
               <MyTextInput label="Location" name="location" type="text" />
-              <>
-                <label htmlFor="breed">Select a Gender</label>
+              <div className="search-gender">
+                <label htmlFor="breed">Select a gender: </label>
                 <Field as="select" name="gender" isClearable={true}>
-                  <option value="male, female">No Preference</option>
+                  <option value="">No Preference</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </Field>
-              </>
+              </div>
               {type ? (
-                <>
-                  <label htmlFor="breed">Select a Breed</label>
+                <div className="search-breed">
+                  <label htmlFor="breed">Select a breed: </label>
                   <Field as="select" name="breed">
                     {type === "dog" ? breedOptions(dogBreedsList) : null}
                     {type === "cat" ? breedOptions(catBreedsList) : null}
@@ -165,38 +164,20 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
                       ? breedOptions(chinchillaBreedsList)
                       : null}
                   </Field>
-                </>
+                </div>
               ) : null}
               <button type="submit">Search</button>
               <button
                 type="reset"
                 onClick={() => {
                   setHighlight(defaultHighlight);
+                  setType("");
                 }}
               >
                 Reset Filters
               </button>
             </Form>
           </Formik>
-          {/* <div>
-            First Row
-            <input placeholder="Enter a Zipcode" />
-            <input />
-            <button>More Filters</button>
-          </div> */}
-          {/* <div>
-            Second Row
-            <input />
-            <input />
-            <input />
-          </div> */}
-          {/* <div>
-            Button Row
-            <Link to="/results">
-              <button onClick={handleSearch}>Search</button>
-            </Link>
-            <button>Reset</button>
-          </div> */}
         </div>
       </div>
     </div>

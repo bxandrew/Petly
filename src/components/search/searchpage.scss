@@ -48,5 +48,26 @@
       justify-content: space-around;
       align-items: center;
     }
+
+    .search-form-terms {
+      border: 2px solid red;
+      display: flex;
+      flex-direction: column;
+
+      .search-location {
+        display: flex;
+        gap: 5px;
+      }
+
+      .search-gender {
+        display: flex;
+        gap: 5px;
+      }
+
+      .search-breed {
+        display: flex;
+        gap: 5px;
+      }
+    }
   }
 }

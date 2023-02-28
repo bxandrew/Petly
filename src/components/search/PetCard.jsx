@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
 import { MdMarkEmailRead } from "react-icons/md";
 import { TiLocation, TiArrowBack, TiExport } from "react-icons/ti";
-import "./petcard.scss";
+// import "./petcard.scss";
 
 const PetCard = ({ animal, handleAddToList }) => {
   const [showMore, setShowMore] = useState(false);
+  const [morePhotos, setMorePhotos] = useState([]);
+  console.log(morePhotos);
+
   const {
     id,
     age,
@@ -22,6 +25,12 @@ const PetCard = ({ animal, handleAddToList }) => {
   const primaryBreed = animal.breeds.primary;
   const secBreed = animal.breeds.secondary;
   const profilePhoto = animal.primary_photo_cropped.small;
+
+  useEffect(() => {
+    if (photos.length > 1) {
+      setMorePhotos([photos]);
+    }
+  }, []);
 
   const genderDiv = () => {
     return gender === "Male" ? (
@@ -58,7 +67,8 @@ const PetCard = ({ animal, handleAddToList }) => {
         <div className="contact-container">
           <div className="contact">Contact Information</div>
           <div className="email">
-            {MdMarkEmailRead()} {contact.email}
+            {MdMarkEmailRead()}
+            <div>{contact.email}</div>
           </div>
           <div>
             {BsFillTelephoneForwardFill()} {contact.phone}

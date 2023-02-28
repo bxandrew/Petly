@@ -2,9 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PetListItem from "./PetListItem";
 import "./mylistpage.scss";
+import testdata from "../testdata.js";
+
+// For testing and development purposes, remove this and testdata after deploying
+const photosOnly = testdata.animals.filter((animal) => {
+  return animal.primary_photo_cropped;
+});
 
 const MyListPage = ({ session }) => {
-  const [myAnimals, setMyAnimals] = useState([]);
+  // const [myAnimals, setMyAnimals] = useState([]);
+  const [myAnimals, setMyAnimals] = useState(photosOnly);
   console.log(myAnimals);
 
   useEffect(() => {
