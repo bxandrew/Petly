@@ -4,6 +4,27 @@ import * as Yup from "yup";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./searchpage.scss";
+import dogBreeds from "./breed_data/dogBreeds.js";
+import catBreeds from "./breed_data/catBreeds.js";
+import birdBreeds from "./breed_data/birdBreeds.js";
+import chinchillaBreeds from "./breed_data/chinchillaBreeds.js";
+
+const dogBreedsList = dogBreeds.breeds.map((breed) => breed.name);
+const catBreedsList = catBreeds.breeds.map((breed) => breed.name);
+const birdBreedsList = birdBreeds.breeds.map((breed) => breed.name);
+const chinchillaBreedsList = chinchillaBreeds.breeds.map((breed) => breed.name);
+
+const breedOptions = (breedList) => {
+  const options = breedList.map((breed) => {
+    return (
+      <option key={breed} value={breed}>
+        {breed}
+      </option>
+    );
+  });
+
+  return options;
+};
 
 const MyTextInput = ({ label, ...props }) => {
   const [field, meta] = useField(props);
@@ -121,8 +142,29 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
             }}
           >
             <Form>
-              <MyTextInput label="Location" name="location" type="location" />
+              <MyTextInput label="Location" name="location" type="text" />
+              {type ? (
+                <>
+                  <label htmlFor="breed">Select a Breed</label>
+                  <Field as="select" name="breed">
+                    {type === "dog" ? breedOptions(dogBreedsList) : null}
+                    {type === "cat" ? breedOptions(catBreedsList) : null}
+                    {type === "bird" ? breedOptions(birdBreedsList) : null}
+                    {type === "small & furry"
+                      ? breedOptions(chinchillaBreedsList)
+                      : null}
+                  </Field>
+                </>
+              ) : null}
               <button type="submit">Search</button>
+              <button
+                type="reset"
+                onClick={() => {
+                  setHighlight(defaultHighlight);
+                }}
+              >
+                Reset Filters
+              </button>
             </Form>
           </Formik>
           {/* <div>

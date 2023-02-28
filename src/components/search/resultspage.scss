@@ -9,6 +9,9 @@
 
 .pet-card-container {
   border: 2px solid red;
+  height: 78vh;
+  overflow: auto;
+  // height: 800px;
   // padding: 0 10px;
   width: 825px;
   z-index: 5;

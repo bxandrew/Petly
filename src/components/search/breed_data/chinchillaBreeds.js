@@ -1,0 +1,156 @@
+module.exports = {
+  breeds: [
+    {
+      name: "Abyssinian",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Chinchilla",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Degu",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Dwarf Hamster",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Ferret",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Gerbil",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Guinea Pig",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Hamster",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Hedgehog",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Mouse",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Peruvian",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Prairie Dog",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Rat",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Rex",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Short-Haired",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Silkie / Sheltie",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Skunk",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Sugar Glider",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+    {
+      name: "Teddy",
+      _links: {
+        type: {
+          href: "/v2/types/small-furry",
+        },
+      },
+    },
+  ],
+};

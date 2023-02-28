@@ -18,11 +18,13 @@ const PetCard = ({ animal, handleAddToList }) => {
           <img src={profilePhoto} />
         </div>
         <div className="animal-name">{name}</div>
-        <div>
-          <button onClick={() => setShowMore(!showMore)}>
-            Show Description
-          </button>
-        </div>
+        {description ? (
+          <div>
+            <button onClick={() => setShowMore(!showMore)}>
+              Show Description
+            </button>
+          </div>
+        ) : null}
         {showMore ? <div className="description">{description}</div> : null}
       </div>
       <div className="pet-card-bottom">

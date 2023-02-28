@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import PetCard from "./PetCard";
 import "./resultspage.scss";
@@ -10,10 +10,24 @@ const ResultsPage = ({
   setNextPage,
   session,
 }) => {
-  console.log("ResultsPage, data:", animalData);
+  const [currentAnimals, setCurrentAnimals] = useState([]);
+  const [showIndex, setShowIndex] = useState(20); // Show the first 20
+  const [loading, setLoading] = useState(false);
+  const scrollRef = useRef(null);
+  console.log(showIndex);
+  // console.log("ResultsPage, data:", animalData);
+  useEffect(() => {
+    const filteredAnimals = animalData.filter((animal) => {
+      return animal.primary_photo_cropped !== null;
+    });
+    setCurrentAnimals([...filteredAnimals]);
+    console.log("Filtered animals", filteredAnimals);
+  }, [animalData]);
+  console.log("Current animals", currentAnimals);
 
+  // Loads more animals on click of more animals button
   const handleMoreClick = () => {
-    console.log("More clicked");
+    setLoading(true);
     if (nextPage.href === undefined) {
       axios
         .get("http://localhost:8080/animals", {
@@ -24,6 +38,7 @@ const ResultsPage = ({
         .then(({ data }) => {
           setAnimalData([...animalData, ...data.animals]);
           setNextPage({ href: data.pagination._links.next.href });
+          setLoading(false);
         });
     } else {
       axios
@@ -36,6 +51,7 @@ const ResultsPage = ({
           console.log("i am still here");
           setAnimalData([...animalData, ...data.animals]);
           setNextPage({ href: data.pagination._links.next.href });
+          setLoading(false);
         })
         .catch((err) => {
           console.log("Error retrieving animal");
@@ -59,10 +75,24 @@ const ResultsPage = ({
       });
   };
 
-  // Each animal is an object with tons of information
+  // Infinite scroll implementation
+  const handleScroll = () => {
+    const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
+    if (scrollHeight - (scrollTop + clientHeight) < 100) {
+      setShowIndex(showIndex + 10);
+      if (loading === false) {
+        // Prevents multiple calls to server and will reset when server responds with data
+        // console.log("Current length of animals:", currentAnimals.length);
+        if (currentAnimals.length - showIndex < 100) {
+          handleMoreClick();
+        }
+      }
+    }
+  };
+
   const petCardElements = [];
 
-  animalData.forEach((animal) => {
+  currentAnimals.slice(0, showIndex).forEach((animal) => {
     // Only show elements where the data has a picture
     if (animal.primary_photo_cropped !== null) {
       petCardElements.push(
@@ -78,8 +108,13 @@ const ResultsPage = ({
   return (
     <div className="results-container">
       <h1>Your ready to adopt matches!</h1>
-      <h2>Login to save some of your matches to a list</h2>
-      <div className="pet-card-container">{petCardElements}</div>
+      <div
+        className="pet-card-container"
+        ref={scrollRef}
+        onScroll={handleScroll}
+      >
+        {petCardElements}
+      </div>
       <button onClick={handleMoreClick}>Load More Animals</button>
     </div>
   );

@@ -54,16 +54,16 @@ const getToken = async () => {
     });
 
   token = result;
-  // console.log(token);
+  console.log(token);
 };
 getToken(); // Async token
 // ==================================================
 
 // ----- Start of routes ----- //
 app.get("/animals", async (req, res) => {
-  console.log(req.session); // req.session.passport = cookie
+  // console.log(req.session); // req.session.passport = cookie
   const { query } = req;
-  console.log("Our initial query: ", query);
+  // console.log("Our initial query: ", query);
   // Loop through query object and only pass in queries that are not empty
   const filteredQuery = {};
   for (let key in query) {
@@ -137,7 +137,9 @@ app.get("/animals/mylist", async (req, res) => {
 // });
 
 //------ Last route to render our react page no matter what page ----- //
+
 app.get("/*", (req, res) => {
+  // res.redirect("/");
   res.sendFile(path.join(__dirname, "../public/index.html"), (err) => {
     if (err) {
       console.log(err);
