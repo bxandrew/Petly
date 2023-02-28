@@ -61,6 +61,9 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
         setNextPage({ href: data.pagination._links.next.href });
         //data.pagination._links.next.href = link
         console.log(data.pagination);
+      })
+      .catch((err) => {
+        console.log("Error retrieving animal");
       });
   };
 

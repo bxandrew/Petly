@@ -61,12 +61,19 @@ getToken(); // Async token
 
 // ----- Start of routes ----- //
 app.get("/animals", async (req, res) => {
+  console.log(req.session); // req.session.passport = cookie
   const { query } = req;
-  console.log(query);
+  console.log("Our initial query: ", query);
+  // Loop through query object and only pass in queries that are not empty
+  const filteredQuery = {};
+  for (let key in query) {
+    if (query[key].length > 0) filteredQuery[key] = query[key];
+  }
+  console.log("Our filtered query: ", filteredQuery);
 
   await axios
     .get("http://api.petfinder.com/v2/animals", {
-      params: query,
+      params: filteredQuery,
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -75,7 +82,7 @@ app.get("/animals", async (req, res) => {
       res.status(200).send(data);
     })
     .catch(() => {
-      res.status(404).json({ message: "Error retrieving animals" });
+      res.status(404).send("Error retrieving animals");
     });
 });
 
@@ -113,6 +120,21 @@ app.get("/animals/mylist", async (req, res) => {
 
   res.status(200).json({ data: results[0].animalList });
 });
+
+// Authorization to be implemented
+// app.get("/search", (req, res) => {
+//   console.log(req.isAuthenticated());
+//   // If not authenticated, take user to home page
+//   if (!req.isAuthenticated()) {
+//     res.redirect("/");
+//   } else {
+//     res.sendFile(path.join(__dirname, "../public/index.html"), (err) => {
+//       if (err) {
+//         console.log(err);
+//       }
+//     });
+//   }
+// });
 
 //------ Last route to render our react page no matter what page ----- //
 app.get("/*", (req, res) => {

@@ -22,9 +22,6 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, setSession }) => {
         </Link>
         {isLoggedIn === false ? (
           <div className="sign-up">
-            <Link to="/search">
-              <button>Search</button>
-            </Link>
             <Link to="/login_signup">
               <button>Login / Sign-Up</button>
             </Link>
@@ -44,5 +41,6 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, setSession }) => {
     </div>
   );
 };
+//63fbcb64593b8bbd00fa6b05'
 
 export default NavBar;

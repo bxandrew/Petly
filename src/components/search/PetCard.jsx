@@ -19,8 +19,9 @@ const PetCard = ({ animal, handleAddToList }) => {
         </div>
         <div className="animal-name">{name}</div>
         <div>
-          <button onClick={() => setShowMore(!showMore)}>Learn More</button>
-          <button onClick={() => handleAddToList(animal)}>Add to List</button>
+          <button onClick={() => setShowMore(!showMore)}>
+            Show Description
+          </button>
         </div>
         {showMore ? <div className="description">{description}</div> : null}
       </div>
@@ -39,7 +40,9 @@ const PetCard = ({ animal, handleAddToList }) => {
           </div>
         </div>
         <div className="button-container">
-          <button className="details">{TiExport()}</button>
+          <button className="details" onClick={() => handleAddToList(animal)}>
+            {TiExport()}
+          </button>
         </div>
       </div>
     </div>

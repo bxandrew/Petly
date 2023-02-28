@@ -17,7 +17,7 @@ const App = () => {
   const [session, setSession] = useState("");
   console.log(session);
   console.log(isLoggedIn);
-  // console.log("Next page state data:", nextPage);
+  console.log("Next page state data:", nextPage);
 
   return (
     <div className="app-container">
@@ -62,7 +62,7 @@ const App = () => {
           />
           <Route path="/mylist" element={<MyListPage session={session} />} />
           <Route path="/petdetails" element={<PetDetailPage />} />
-          {/* <Route path="/*" element={<ErrorRoute />} /> */}
+          {/* <Route path="/*" element={<HomePage />} /> */}
         </Routes>
       </div>
     </div>

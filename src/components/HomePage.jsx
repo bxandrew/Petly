@@ -18,8 +18,8 @@ const HomePage = () => {
             the perfect match
           </div>
           <div>
-            <Link to="/search" style={{ textDecoration: "none" }}>
-              <button>Find A Friend</button>
+            <Link to="/login_signup" style={{ textDecoration: "none" }}>
+              <button>Get Started</button>
             </Link>
           </div>
         </div>

@@ -33,11 +33,12 @@ const ResultsPage = ({
           },
         })
         .then(({ data }) => {
+          console.log("i am still here");
           setAnimalData([...animalData, ...data.animals]);
           setNextPage({ href: data.pagination._links.next.href });
         })
         .catch((err) => {
-          console.log(err);
+          console.log("Error retrieving animal");
         });
     }
   };

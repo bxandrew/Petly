@@ -30,7 +30,7 @@ const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
         setSession(res.data.success);
         setIsLoggedIn(true);
         setShowError(false);
-        navigate("/"); //navigates you back to home page
+        navigate("/search"); //navigates you back to home page
         // Todo: check to see if list has items, if it does go to list
         // Successful login should take you to either search or my list
       })
