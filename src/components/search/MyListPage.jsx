@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import PetCard from "./PetCard";
 import PetListItem from "./PetListItem";
 import "./mylistpage.scss";
 
@@ -35,7 +34,6 @@ const MyListPage = ({ session }) => {
         },
       })
       .then(({ data }) => {
-        // console.log(data.data);
         setMyAnimals(data.data);
       });
   };

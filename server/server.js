@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 //----- Express Session -----//
 app.use(
   session({
-    secret: "Very secret",
+    secret: "very secret secret",
     resave: false,
     saveUninitialized: true,
   })
@@ -114,7 +114,7 @@ app.get("/animals/mylist", async (req, res) => {
   res.status(200).json({ data: results[0].animalList });
 });
 
-//------ Last route to render our react page no matter what ----- //
+//------ Last route to render our react page no matter what page ----- //
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"), (err) => {
     if (err) {
@@ -127,7 +127,6 @@ app.get("/*", (req, res) => {
 app.post("/animals", async (req, res) => {
   // If we cant find an existing entry in our db, create one
   const { userId, animal } = req.body.data;
-  console.log(userId);
 
   // Push our animal into our database if we have an already existing instance list
   let result = await List.findOneAndUpdate(
@@ -148,24 +147,17 @@ app.post("/animals", async (req, res) => {
       console.log("created new db entry");
     });
   }
-
   res.status(200).send("Success");
 });
 
 app.put("/animals/mylist", async (req, res) => {
   const { userId, animalList } = req.body.data;
-
   await List.findOneAndUpdate({ userId: userId }, { animalList: animalList });
-
-  // Return the new list
   let results = await List.find({ userId: userId });
-  console.log(results);
-
   if (!results.length) {
     res.status(404).json({ error: "Bad request" });
     return;
   }
-
   res.status(200).json({ data: results[0].animalList });
 });
 
