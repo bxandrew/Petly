@@ -147,7 +147,7 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
               <MyTextInput label="Location" name="location" type="text" />
               <div className="search-gender">
                 <label htmlFor="breed">Select a gender: </label>
-                <Field as="select" name="gender" isClearable={true}>
+                <Field as="select" name="gender">
                   <option value="">No Preference</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
