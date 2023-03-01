@@ -8,6 +8,7 @@ import dogBreeds from "./breed_data/dogBreeds.js";
 import catBreeds from "./breed_data/catBreeds.js";
 import birdBreeds from "./breed_data/birdBreeds.js";
 import chinchillaBreeds from "./breed_data/chinchillaBreeds.js";
+import Carousel from "./Carousel";
 
 const dogBreedsList = dogBreeds.breeds.map((breed) => breed.name);
 const catBreedsList = catBreeds.breeds.map((breed) => breed.name);
@@ -179,6 +180,9 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
             </Form>
           </Formik>
         </div>
+      </div>
+      <div className="search-carousel">
+        <Carousel />
       </div>
     </div>
   );

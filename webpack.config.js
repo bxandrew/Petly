@@ -28,6 +28,10 @@ module.exports = {
         include: path.resolve(__dirname, "src"),
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   devtool: "eval-cheap-module-source-map",
