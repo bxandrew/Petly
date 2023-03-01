@@ -51,7 +51,7 @@ const Carousel = () => {
           disableOnInteraction: false,
         }}
         navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay, Navigation]}
         className="mySwiper"
       >
         {profilePhotos}

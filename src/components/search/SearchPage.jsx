@@ -82,7 +82,6 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
         // Spreading prev data with new animal data
         setAnimalData([...animalData, ...data.animals]);
         setNextPage({ href: data.pagination._links.next.href });
-        //data.pagination._links.next.href = link
         console.log(data.pagination);
       })
       .catch((err) => {
