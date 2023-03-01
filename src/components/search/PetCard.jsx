@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
 import { MdMarkEmailRead } from "react-icons/md";
+import { TfiMoreAlt } from "react-icons/tfi";
 import { TiLocation, TiArrowBack, TiExport } from "react-icons/ti";
 // import "./petcard.scss";
 
 const PetCard = ({ animal, handleAddToList }) => {
   const [showMore, setShowMore] = useState(false);
   const [morePhotos, setMorePhotos] = useState([]);
-  console.log(morePhotos);
+  const [currPicIndex, setCurrPicIndex] = useState(0);
 
   const {
     id,
@@ -28,9 +29,18 @@ const PetCard = ({ animal, handleAddToList }) => {
 
   useEffect(() => {
     if (photos.length > 1) {
-      setMorePhotos([photos]);
+      const onlyMediumPhotos = photos.map((photo) => photo.medium);
+      setMorePhotos(onlyMediumPhotos);
     }
   }, []);
+
+  const handleImageClick = () => {
+    if (currPicIndex >= morePhotos.length - 1) {
+      setCurrPicIndex(0);
+    } else {
+      setCurrPicIndex(currPicIndex + 1);
+    }
+  };
 
   const genderDiv = () => {
     return gender === "Male" ? (
@@ -44,7 +54,20 @@ const PetCard = ({ animal, handleAddToList }) => {
     <div className="pet-card">
       <div className="pet-card-top">
         <div className="profile-pic">
-          <img src={profilePhoto} />
+          {morePhotos.length > 0 ? (
+            <>
+              <img
+                src={morePhotos[currPicIndex]}
+                onClick={handleImageClick}
+                className="clickable-image"
+              />
+              <div className="photo-indicator" onClick={handleImageClick}>
+                {TfiMoreAlt()}
+              </div>
+            </>
+          ) : (
+            <img src={profilePhoto} />
+          )}
         </div>
         <div className="animal-name">{name}</div>
         <div className="animal-breed">
