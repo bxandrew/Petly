@@ -10,10 +10,10 @@
   }
 
   .search-form-container {
-    border: 3px solid #ccd5ae;
+    border: 3px solid #72976b;
     background-color: rgba(204, 213, 174, 0.5);
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 8px rgb(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.7);
     width: 800px;
     height: 400px;
     margin-left: auto;
@@ -34,7 +34,7 @@
       user-select: none;
 
       .icon-container {
-        border: 3px solid #ccd5ae;
+        border: 3px solid #72976b70;
         background-color: #fefae0;
         box-shadow: 0px 0px 8px rgb(0, 0, 0, 0.7);
         border-radius: 50%;
@@ -58,6 +58,8 @@
     .search-form-bottom {
       // border: 3px solid orange;
       border-top: 3px solid rgba(128, 128, 128, 0.5);
+      border-bottom-right-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
       background-color: #ccd5ae;
       flex-grow: 2;
       padding: 0 100px;
@@ -177,7 +179,7 @@
         all: unset;
         font-size: 1.1rem;
         border-radius: 0.25rem;
-        border: 2px solid gray;
+        border: 2px solid #72976b;
         background-color: #d4a37350;
         width: 125px;
         height: 40px;
@@ -187,6 +189,7 @@
       button:hover {
         cursor: pointer;
         background-color: #d4a373;
+        box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.7);
       }
     }
   }

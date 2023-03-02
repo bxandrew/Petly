@@ -19,9 +19,9 @@ const HomePage = () => {
             There are many animals in need that need people like you to help
             rescue them. Let us help find you a match.
           </div>
-          <div className="get-started">
+          <div>
             <Link to="/login_signup" style={{ textDecoration: "none" }}>
-              <button>Get Started</button>
+              <button className="get-started">Get Started</button>
             </Link>
           </div>
         </div>
