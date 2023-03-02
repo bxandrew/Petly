@@ -138,7 +138,6 @@ app.get("/animals/mylist", async (req, res) => {
 // });
 
 //------ Last route to render our react page no matter what page ----- //
-
 app.get("/*", (req, res) => {
   // res.redirect("/");
   res.sendFile(path.join(__dirname, "../public/index.html"), (err) => {

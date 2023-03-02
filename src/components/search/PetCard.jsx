@@ -127,4 +127,5 @@ const PetCard = ({ animal, handleAddToList }) => {
   );
 };
 
+
 export default PetCard;

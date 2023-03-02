@@ -8,6 +8,11 @@ const PetListItem = ({ animal, handleDelete }) => {
   const address = animal.contact.address;
   const breed = animal.breeds.primary;
   const environment = animal.environment;
+  console.log(animal.tags);
+
+  const traits = animal.tags.map((tag) => {
+    return <span key={tag}>{tag}</span>;
+  });
 
   const location = `${address.city}, ${address.state} ${address.postcode}`;
   return (
@@ -15,15 +20,39 @@ const PetListItem = ({ animal, handleDelete }) => {
       <div>
         <img src={profilePic} className="my-list-profile-pic" />
       </div>
-      <div>
-        <div>{name}</div>
-        <div>Shelter ID: {animal.organization_id}</div>
-        <div>{animal.description}</div>
-        <div>{breed}</div>
-        <div>{animal.tags}</div>
-        <div>{animal.status}</div>
-        <div>{location}</div>
-        <button onClick={() => handleDelete(animal.id)}>Unfavorite</button>
+      <div className="my-list-right-container">
+        <div
+          className="list-name"
+          style={name.length > 15 ? { fontSize: "1.2rem" } : null}
+        >
+          {name}
+        </div>
+        <div className="list-details">
+          <div>
+            <div>
+              <span>Shelter ID:</span> {animal.organization_id}
+            </div>
+            <div>
+              <span>Description:</span> {animal.description}
+            </div>
+            <div>
+              <span>Breed:</span> {breed}
+            </div>
+            <div className="list-traits">
+              <span>Traits:</span> {traits.slice(0, 5)}
+            </div>
+            <div>
+              <span>Email:</span> {email}
+            </div>
+            <div>
+              <span>Phone:</span> {phone}{" "}
+            </div>
+            <div>
+              <span>Location:</span> {location}
+            </div>
+          </div>
+          <button onClick={() => handleDelete(animal.id)}>Unfavorite</button>
+        </div>
       </div>
     </div>
   );

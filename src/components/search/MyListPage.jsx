@@ -56,9 +56,8 @@ const MyListPage = ({ session }) => {
   });
 
   return (
-    <div>
-      <h1>My List of Favorite Matches</h1>
-      <div>Match One</div>
+    <div className="my-list-container">
+      <h1>Your Favorite Picks</h1>
       {petList}
     </div>
   );

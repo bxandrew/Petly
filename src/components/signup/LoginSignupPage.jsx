@@ -75,12 +75,12 @@ const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
               <Form>
                 <MyTextInput label="Email Address" name="email" type="email" />
                 <MyTextInput label="Password" name="password" type="password" />
-                <button type="submit">Submit</button>
                 {showError ? (
                   <div className="error-message">
                     Incorrect Username/Password or User Already Exists
                   </div>
                 ) : null}
+                <button type="submit">Submit</button>
               </Form>
             )}
           </Formik>
