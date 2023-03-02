@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <>
       <div className="main-bg">
-        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3269&q=80"></img>
+        <img src="./mainpagedogs.jpg"></img>
       </div>
       <div className="main-container">
         <div className="slogan-container">

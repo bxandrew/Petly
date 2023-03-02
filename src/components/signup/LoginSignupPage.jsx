@@ -42,46 +42,51 @@ const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
   };
 
   return (
-    <div>
-      <h1>Login or Signup page</h1>
-      <div className="form-container">
-        <Formik
-          initialValues={{
-            email: "",
-            password: "",
-          }}
-          validationSchema={Yup.object({
-            email: Yup.string()
-              .email("Invalid email address")
-              .required("Email is required"),
-            password: Yup.string()
-              // .matches(
-              //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-              //   "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-              // )
-              .required("Password is required"),
-          })}
-          onSubmit={(values, { setSubmitting }) => {
-            // console.log("Our values are: ", JSON.stringify(values, null, 2));
-            handleSubmit(values);
-            setSubmitting(false); // To finish off the cycle
-          }}
-        >
-          {(formik) => (
-            <Form>
-              <MyTextInput label="Email Address" name="email" type="email" />
-              <MyTextInput label="Password" name="password" type="password" />
-              <button type="submit">Submit</button>
-              {showError ? (
-                <div className="error-message">
-                  Incorrect Username/Password or User Already Exists
-                </div>
-              ) : null}
-            </Form>
-          )}
-        </Formik>
+    <>
+      <div className="main-bg">
+        <img src="./logindogs.jpg"></img>
       </div>
-    </div>
+      <div className="signup-page-container">
+        <h1>Login or Create an Account</h1>
+        <div className="form-container">
+          <Formik
+            initialValues={{
+              email: "",
+              password: "",
+            }}
+            validationSchema={Yup.object({
+              email: Yup.string()
+                .email("Invalid email address")
+                .required("Email is required"),
+              password: Yup.string()
+                // .matches(
+                //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+                //   "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+                // )
+                .required("Password is required"),
+            })}
+            onSubmit={(values, { setSubmitting }) => {
+              // console.log("Our values are: ", JSON.stringify(values, null, 2));
+              handleSubmit(values);
+              setSubmitting(false); // To finish off the cycle
+            }}
+          >
+            {(formik) => (
+              <Form>
+                <MyTextInput label="Email Address" name="email" type="email" />
+                <MyTextInput label="Password" name="password" type="password" />
+                <button type="submit">Submit</button>
+                {showError ? (
+                  <div className="error-message">
+                    Incorrect Username/Password or User Already Exists
+                  </div>
+                ) : null}
+              </Form>
+            )}
+          </Formik>
+        </div>
+      </div>
+    </>
   );
 };
 
