@@ -45,13 +45,17 @@
         align-items: center;
 
         &.highlight {
-          background-color: #d4a373;
+          background-color: #d4a373ab;
         }
       }
 
       .icon-container:hover {
         cursor: pointer;
-        background-color: #d4a373;
+        background-color: #d4a373ab;
+      }
+
+      .icon-container:active {
+        transform: translate(1px, 1px);
       }
     }
 
@@ -190,6 +194,10 @@
         cursor: pointer;
         background-color: #d4a373;
         box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.7);
+      }
+
+      button:active {
+        transform: translate(1px, 1px);
       }
     }
   }

@@ -69,6 +69,10 @@
       button:hover {
         box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.4);
       }
+
+      button:active {
+        transform: translate(1px, 1px);
+      }
     }
   }
 }

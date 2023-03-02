@@ -11,6 +11,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, setSession }) => {
     navigate("/");
   };
 
+
   return (
     <div className="navbar-container">
       <nav className="navbar">

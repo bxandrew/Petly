@@ -16,7 +16,8 @@
 .form-container {
   border: 2px solid white;
   border-radius: 0.75rem;
-  background-color: rgba(128, 128, 128, 0.9);
+  // background-color: rgba(128, 128, 128, 0.9);
+  background-color: rgba(204, 213, 174, 0.8);
   box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.4);
   width: 400px;
   margin: 0 auto;
@@ -26,7 +27,6 @@
     color: #ab0505;
     font-size: 1rem;
     margin-top: 0.25rem;
-    text-align: end;
     padding-right: 10px;
   }
 
@@ -50,9 +50,29 @@
 
   .error-message {
     color: #ab0505;
+    width: 250px;
     font-size: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .submit-login {
+    // border: 1px solid red;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 50px;
+
+    button {
+      cursor: pointer;
+      padding: 5px 15px;
+      border: 2px solid gray;
+      border-radius: 5px;
+    }
+
+    button:active {
+      transform: translate(1px, 1px);
+    }
   }
 
   // input {

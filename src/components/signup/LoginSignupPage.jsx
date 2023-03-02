@@ -61,8 +61,9 @@ const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
               password: Yup.string()
                 // .matches(
                 //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-                //   "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+                //   "Must contain atleast 8 Characters, an Uppercase, a Lowercase, a Number and a Special Case Character"
                 // )
+                .min(8, "Must contain atleast 8 characters")
                 .required("Password is required"),
             })}
             onSubmit={(values, { setSubmitting }) => {
@@ -75,12 +76,15 @@ const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
               <Form>
                 <MyTextInput label="Email Address" name="email" type="email" />
                 <MyTextInput label="Password" name="password" type="password" />
-                {showError ? (
-                  <div className="error-message">
-                    Incorrect Username/Password or User Already Exists
-                  </div>
-                ) : null}
-                <button type="submit">Submit</button>
+                <div className="submit-login">
+                  <button type="submit">Submit</button>
+                  {showError ? (
+                    <div className="error-message">
+                      Incorrect Username/Password or User Already Exists
+                    </div>
+                  ) : null}
+
+                </div>
               </Form>
             )}
           </Formik>
@@ -91,3 +95,4 @@ const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
 };
 
 export default LoginSignupPage;
+

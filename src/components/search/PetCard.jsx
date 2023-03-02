@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
 import { MdMarkEmailRead } from "react-icons/md";
+import { TiLocation, TiArrowBack, TiExport } from "react-icons/ti";
 import { TfiMoreAlt } from "react-icons/tfi";
 import { CgMoreVerticalR } from "react-icons/cg";
-import { TiLocation, TiArrowBack, TiExport } from "react-icons/ti";
 // import "./petcard.scss";
 
 const PetCard = ({ animal, handleAddToList }) => {
@@ -80,7 +80,7 @@ const PetCard = ({ animal, handleAddToList }) => {
           className="animal-breed"
           style={
             (secBreed && primaryBreed.length + secBreed.length > 20) ||
-            primaryBreed.length > 20
+              primaryBreed.length > 20
               ? { fontSize: "0.8rem" }
               : null
           }

@@ -14,6 +14,8 @@ const MyListPage = ({ session }) => {
   const [myAnimals, setMyAnimals] = useState(photosOnly);
   console.log(myAnimals);
 
+
+
   useEffect(() => {
     axios
       .get("http://localhost:8080/animals/mylist", {

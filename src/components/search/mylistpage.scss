@@ -60,6 +60,38 @@
       flex-grow: 1;
       flex-direction: column;
       justify-content: space-between;
+
+      .top-detail-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+
+        .top-traits {
+          margin-top: 10px;
+
+          span {
+            text-decoration: underline;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .contact-container {
+        // background-color: rgba(67, 67, 67, 0.572);
+        background-color: rgba(212, 163, 115, 0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 3px 10px;
+        border-radius: 0.5rem;
+        margin-bottom: 10px;
+
+        .contact-details {
+          display: flex;
+          gap: 10px;
+        }
+      }
     }
 
     button {
