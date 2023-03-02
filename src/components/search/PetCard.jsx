@@ -72,7 +72,7 @@ const PetCard = ({ animal, handleAddToList }) => {
         </div>
         <div
           className="animal-name"
-          style={name.length > 13 ? { fontSize: "1rem" } : null}
+          style={name.length > 11 ? { fontSize: "1.2rem" } : null}
         >
           {name}
         </div>
