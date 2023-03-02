@@ -1,14 +1,26 @@
 .results-container {
   height: 100%;
-  border: 5px solid green;
+  flex-grow: 1;
+  // border: 5px solid green;
+  background-color: #faedcd;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
+
+  h1 {
+    padding-top: 0;
+    // margin-top: 0;
+  }
 }
 
 .pet-card-container {
-  border: 2px solid red;
+  border: 3px solid #72976b;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  background-color: rgba(204, 213, 174, 0.5);
+  box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.7);
+  padding-top: 15px;
   height: 78vh;
   overflow: auto;
   min-width: 560px;
@@ -21,8 +33,10 @@
   .pet-card {
     display: flex;
     flex-direction: column;
-    border: 2px solid blue;
+    border: 2px solid #72976b;
+    box-shadow: 0px 0px 4px rgb(0, 0, 0, 0.7);
     border-radius: 0.75rem;
+    background-color: #567f4f7e;
     margin: 10px 5px;
     width: 255px;
     // width: 31%;
@@ -33,7 +47,8 @@
       align-items: center;
       min-height: 300px;
       padding-bottom: 20px;
-      border-bottom: 2px solid brown;
+      padding-top: 10px;
+      border-bottom: 3px solid #a98467;
 
       .profile-pic {
         width: 150px;
@@ -57,15 +72,17 @@
           user-select: none;
           cursor: pointer;
           // position: absolute;
+          color: white;
           display: flex;
           justify-content: center;
           width: 50px;
-          transform: translate(0, -20px);
+          transform: translate(0, -20px) scale(1.2);
           // border: 1px solid cyan;
         }
 
         img {
-          border: 2px solid green;
+          border: 2px solid #6c584c;
+          box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.4);
           object-fit: cover;
           min-width: 150px;
           min-height: 150px;
@@ -76,13 +93,19 @@
       }
 
       .animal-name {
-        text-align: center;
+        // text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 2rem;
         margin-bottom: 10px;
         word-break: break-all;
         min-height: 2rem;
         max-height: 4rem;
         overflow-y: auto;
+        height: 37px;
+        padding-left: 10px;
+        padding-right: 10px;
       }
 
       .animal-gender-size {
@@ -110,11 +133,24 @@
         }
 
         .animal-size {
-          background-color: blanchedalmond;
+          background-color: #d4a373;
           border-radius: 2rem;
           padding: 2.5px 10px;
           text-align: center;
           width: 40%;
+        }
+
+        .show-more {
+          // border: 1px solid red;
+          display: flex;
+          align-items: center;
+          object-fit: fill;
+          transform: scale(1.3) translate(0, -1px);
+        }
+
+        .show-more:hover {
+          cursor: pointer;
+          opacity: 0.7;
         }
       }
 
@@ -122,24 +158,30 @@
         text-align: center;
         margin-top: 5px;
         margin-bottom: 5px;
-        background-color: orange;
-        border-radius: 2rem;
+        // background-color: #f0ead2;
+        border-bottom: 1px solid #6c584c;
+        border-top: 1px solid #6c584c;
+        // border-radius: 0.5rem;
         padding: 2.5px 10px;
         text-align: center;
         width: 90%;
+        // font-size: 0.85rem;
       }
 
       .description {
-        border: 1px solid red;
+        // border: 1px solid red;
+        border-bottom: 1px solid #6c584c;
+        border-top: 1px solid #6c584c;
         margin: 5px 5px;
         text-align: center;
         word-break: break-word;
         padding: 5px;
+        width: 90%;
       }
     }
 
     .pet-card-bottom {
-      background-color: lightgoldenrodyellow;
+      background-color: rgba(204, 213, 174);
       border-bottom-left-radius: 0.75rem;
       border-bottom-right-radius: 0.75rem;
       display: flex;
@@ -178,7 +220,9 @@
           flex-grow: 0;
           display: flex;
           align-items: center;
-          border: 2px solid brown;
+          border: 2px solid #6c584ca3;
+          border-radius: 0.3rem;
+          color: #6c584c;
           justify-content: center;
           // margin-top: auto;
           // margin-bottom: auto;
@@ -186,11 +230,11 @@
       }
 
       .details:hover {
-        background-color: yellow;
+        // background-color: yellow;
+        box-shadow: 0px 0px 4px rgb(0, 0, 0, 0.4);
       }
-
       .details:active {
-        background-color: blue;
+        transform: translate(1px, 1px);
       }
 
       div {
@@ -201,19 +245,16 @@
           // border: 1px solid brown;
           border-top-right-radius: 0.75rem;
           border-top-left-radius: 0.75rem;
-          background-color: darkgoldenrod;
+          background-color: #a98467;
           display: flex;
           padding: 5px 0;
           justify-content: center;
           font-size: 0.8rem;
+          font-weight: 700;
         }
 
         .email {
           word-break: break-all;
-
-          div {
-            // width: 50px;
-          }
         }
 
         div {

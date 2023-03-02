@@ -115,7 +115,7 @@ const ResultsPage = ({
       >
         {petCardElements}
       </div>
-      <button onClick={handleMoreClick}>Load More Animals</button>
+      {/* <button onClick={handleMoreClick}>Load More Animals</button> */}
     </div>
   );
 };

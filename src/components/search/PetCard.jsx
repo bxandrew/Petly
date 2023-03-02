@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BsFillTelephoneForwardFill } from "react-icons/bs";
 import { MdMarkEmailRead } from "react-icons/md";
 import { TfiMoreAlt } from "react-icons/tfi";
+import { CgMoreVerticalR } from "react-icons/cg";
 import { TiLocation, TiArrowBack, TiExport } from "react-icons/ti";
 // import "./petcard.scss";
 
@@ -69,33 +70,48 @@ const PetCard = ({ animal, handleAddToList }) => {
             <img src={profilePhoto} />
           )}
         </div>
-        <div className="animal-name">{name}</div>
-        <div className="animal-breed">
+        <div
+          className="animal-name"
+          style={name.length > 13 ? { fontSize: "1rem" } : null}
+        >
+          {name}
+        </div>
+        <div
+          className="animal-breed"
+          style={
+            (secBreed && primaryBreed.length + secBreed.length > 20) ||
+            primaryBreed.length > 20
+              ? { fontSize: "0.8rem" }
+              : null
+          }
+        >
           {primaryBreed} {secBreed ? `/ ${secBreed}` : ""}
         </div>
         <div className="animal-gender-size">
           {genderDiv()}
           <div className="animal-size">{size}</div>
+          {description ? (
+            <div className="show-more" onClick={() => setShowMore(!showMore)}>
+              {CgMoreVerticalR()}
+            </div>
+          ) : null}
         </div>
-        {description ? (
-          <div>
-            <button onClick={() => setShowMore(!showMore)}>
-              Show Description
-            </button>
-          </div>
-        ) : null}
         {showMore ? <div className="description">{description}</div> : null}
       </div>
       <div className="pet-card-bottom">
         <div className="contact-container">
           <div className="contact">Contact Information</div>
-          <div className="email">
-            {MdMarkEmailRead()}
-            <div>{contact.email}</div>
-          </div>
-          <div>
-            {BsFillTelephoneForwardFill()} {contact.phone}
-          </div>
+          {contact.email ? (
+            <div className="email">
+              {MdMarkEmailRead()}
+              <div>{contact.email}</div>
+            </div>
+          ) : null}
+          {contact.phone ? (
+            <div>
+              {BsFillTelephoneForwardFill()} {contact.phone}
+            </div>
+          ) : null}
           <div>
             {TiLocation()} {contact.address.city},{contact.address.state}{" "}
             {contact.address.postcode}

@@ -3,12 +3,12 @@ import { Formik, Form, useField, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import "./searchpage.scss";
 import dogBreeds from "./breed_data/dogBreeds.js";
 import catBreeds from "./breed_data/catBreeds.js";
 import birdBreeds from "./breed_data/birdBreeds.js";
 import chinchillaBreeds from "./breed_data/chinchillaBreeds.js";
 import Carousel from "./Carousel";
+import "./searchpage.scss";
 
 const dogBreedsList = dogBreeds.breeds.map((breed) => breed.name);
 const catBreedsList = catBreeds.breeds.map((breed) => breed.name);
