@@ -23,6 +23,7 @@ const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
   const [showError, setShowError] = useState(false);
   const navigate = useNavigate(); // Custom hook from react-router-dom
   const handleSubmit = (values) => {
+    console.log(values);
     axios
       .post("http://localhost:8080/auth/login_signup", values)
       .then((res) => {

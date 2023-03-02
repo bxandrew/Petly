@@ -7,6 +7,7 @@ const app = express();
 
 const session = require("express-session");
 const mongoose = require("mongoose");
+
 const passport = require("./passport/setup");
 const auth = require("./routes/auth");
 

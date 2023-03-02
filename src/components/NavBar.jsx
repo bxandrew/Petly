@@ -17,7 +17,7 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, setSession }) => {
         <Link to="/" style={{ textDecoration: "none" }}>
           <div className="logo">
             <img src="./logo.png" alt="Dog Icon" />
-            <span className="title">Adopt Me</span>
+            <span className="title">Petly</span>
           </div>
         </Link>
         {isLoggedIn === false ? (

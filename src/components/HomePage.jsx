@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
+import "./homepage.scss";
 
 const HomePage = () => {
   return (
@@ -11,13 +12,14 @@ const HomePage = () => {
       <div className="main-container">
         <div className="slogan-container">
           <div className="main-slogan">
-            Thinking of finding a new bundle full of joy to your family?
+            <div>Adopt a pet</div>
+            <div>Make an impact</div>
           </div>
           <div className="second-slogan">
-            You can begin by clicking the button below and we'll help you find
-            the perfect match
+            There are many animals in need that need people like you to help
+            rescue them. Let us help find you a match.
           </div>
-          <div>
+          <div className="get-started">
             <Link to="/login_signup" style={{ textDecoration: "none" }}>
               <button>Get Started</button>
             </Link>

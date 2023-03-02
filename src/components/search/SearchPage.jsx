@@ -23,6 +23,12 @@ const breedOptions = (breedList) => {
     );
   });
 
+  options.unshift(
+    <option key={"default"} value={""}>
+      No Preference
+    </option>
+  );
+
   return options;
 };
 
@@ -31,8 +37,10 @@ const MyTextInput = ({ label, ...props }) => {
   // Returns .getFieldProps as field and .getFieldMeta as meta
   return (
     <div className="search-location">
-      <label htmlFor={props.name}>{label}: </label>
-      <input className="text-input" {...field} {...props} />
+      <div>
+        <label htmlFor={props.name}>{label}: </label>
+        <input className="text-input" {...field} {...props} />
+      </div>
       {meta.touched && meta.error ? (
         <div className="text-error">{meta.error}</div>
       ) : null}
@@ -48,11 +56,13 @@ const defaultHighlight = {
 };
 
 const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
+  const [showForm, setShowForm] = useState(false);
   const [type, setType] = useState("");
   const [highlight, setHighlight] = useState(defaultHighlight);
   const navigate = useNavigate();
 
   const handleTypeClick = (value) => {
+    setShowForm(true);
     setType(value);
     if (value === "small & furry") {
       value = "chinchilla";
@@ -91,7 +101,7 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
 
   return (
     <div className="search-container">
-      <h1>What type of friend are you looking for?</h1>
+      <h1>What type of pet are you looking for?</h1>
       <div className="search-form-container">
         <div className="search-form-top">
           <div
@@ -121,64 +131,72 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
             <img src="./chinchilla-icon.png" />
           </div>
         </div>
-        <div className="search-form-bottom">
-          <Formik
-            initialValues={{
-              location: "",
-              gender: "",
-            }}
-            validationSchema={Yup.object({
-              location: Yup.number()
-                .min(10000, "Must be a 5 digit zipcode")
-                .max(99999, "Must be a 5 digit zipcode")
-                .typeError("Must be a 5 digit zipcode"),
-            })}
-            onSubmit={(values, { setSubmitting }) => {
-              console.log(
-                "Our search values are: ",
-                JSON.stringify(values, null, 2)
-              );
-              setSubmitting(false);
-              handleSearch(values);
-              navigate("/results");
-            }}
-          >
-            <Form className="search-form-terms">
-              <MyTextInput label="Location" name="location" type="text" />
-              <div className="search-gender">
-                <label htmlFor="breed">Select a gender: </label>
-                <Field as="select" name="gender">
-                  <option value="">No Preference</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </Field>
-              </div>
-              {type ? (
-                <div className="search-breed">
-                  <label htmlFor="breed">Select a breed: </label>
-                  <Field as="select" name="breed">
-                    {type === "dog" ? breedOptions(dogBreedsList) : null}
-                    {type === "cat" ? breedOptions(catBreedsList) : null}
-                    {type === "bird" ? breedOptions(birdBreedsList) : null}
-                    {type === "small & furry"
-                      ? breedOptions(chinchillaBreedsList)
-                      : null}
-                  </Field>
+        {showForm ? (
+          <div className="search-form-bottom">
+            <Formik
+              initialValues={{
+                location: "",
+                gender: "",
+                breed: "",
+              }}
+              validationSchema={Yup.object({
+                location: Yup.number()
+                  .min(10000, "Must be a 5 digit zipcode")
+                  .max(99999, "Must be a 5 digit zipcode")
+                  .typeError("Must be a 5 digit zipcode"),
+              })}
+              onSubmit={(values, { setSubmitting }) => {
+                console.log(
+                  "Our search values are: ",
+                  JSON.stringify(values, null, 2)
+                );
+                setSubmitting(false);
+                handleSearch(values);
+                navigate("/results");
+              }}
+            >
+              <Form className="search-form-terms">
+                <div className="terms-container">
+                  <MyTextInput label="Location" name="location" type="text" />
+                  <div className="search-gender">
+                    <label htmlFor="breed">Select a gender: </label>
+                    <Field as="select" name="gender">
+                      <option value="">No Preference</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </Field>
+                  </div>
+                  {type ? (
+                    <div className="search-breed">
+                      <label htmlFor="breed">Select a breed: </label>
+                      <Field as="select" name="breed">
+                        {type === "dog" ? breedOptions(dogBreedsList) : null}
+                        {type === "cat" ? breedOptions(catBreedsList) : null}
+                        {type === "bird" ? breedOptions(birdBreedsList) : null}
+                        {type === "small & furry"
+                          ? breedOptions(chinchillaBreedsList)
+                          : null}
+                      </Field>
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
-              <button type="submit">Search</button>
-              <button
-                type="reset"
-                onClick={() => {
-                  setHighlight(defaultHighlight);
-                  setType("");
-                }}
-              >
-                Reset Filters
-              </button>
-            </Form>
-          </Formik>
-        </div>
+                <div className="form-buttons">
+                  <button type="submit">Search</button>
+                  <button
+                    type="reset"
+                    onClick={() => {
+                      setHighlight(defaultHighlight);
+                      setType("");
+                      setShowForm(false);
+                    }}
+                  >
+                    Reset
+                  </button>
+                </div>
+              </Form>
+            </Formik>
+          </div>
+        ) : null}
       </div>
       <div className="search-carousel">
         <Carousel />
