@@ -11,7 +11,6 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, setSession }) => {
     navigate("/");
   };
 
-
   return (
     <div className="navbar-container">
       <nav className="navbar">
@@ -42,6 +41,5 @@ const NavBar = ({ isLoggedIn, setIsLoggedIn, setSession }) => {
     </div>
   );
 };
-//63fbcb64593b8bbd00fa6b05'
 
 export default NavBar;
