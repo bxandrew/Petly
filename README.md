@@ -15,4 +15,4 @@ Petly is a web application that allows users to find pets/animals in need of hom
 
 ![alt text](https://github.com/bxandrew/Petly/blob/main/readmepics/search.png)
 
-![alt text](https://github.com/bxandrew/Petly/blob/main/readmepics/searchresults.png)
+![alt text](https://github.com/bxandrew/Petly/blob/main/readmepics/searchresults1.png)
