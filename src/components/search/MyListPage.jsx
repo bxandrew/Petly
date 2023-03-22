@@ -10,11 +10,7 @@ const photosOnly = testdata.animals.filter((animal) => {
 });
 
 const MyListPage = ({ session }) => {
-  // const [myAnimals, setMyAnimals] = useState([]);
   const [myAnimals, setMyAnimals] = useState(photosOnly);
-  console.log(myAnimals);
-
-
 
   useEffect(() => {
     axios

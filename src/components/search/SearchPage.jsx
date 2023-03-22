@@ -88,11 +88,8 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
         },
       })
       .then(({ data }) => {
-        console.log(data.animals);
-        // Spreading prev data with new animal data
         setAnimalData([...animalData, ...data.animals]);
         setNextPage({ href: data.pagination._links.next.href });
-        console.log(data.pagination);
       })
       .catch((err) => {
         console.log("Error retrieving animal");
@@ -146,10 +143,6 @@ const SearchPage = ({ animalData, setAnimalData, setNextPage }) => {
                   .typeError("Must be a 5 digit zipcode"),
               })}
               onSubmit={(values, { setSubmitting }) => {
-                console.log(
-                  "Our search values are: ",
-                  JSON.stringify(values, null, 2)
-                );
                 setSubmitting(false);
                 handleSearch(values);
                 navigate("/results");

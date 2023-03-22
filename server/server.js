@@ -62,9 +62,7 @@ getToken(); // Async token
 
 // ----- Start of routes ----- //
 app.get("/animals", async (req, res) => {
-  // console.log(req.session); // req.session.passport = cookie
   const { query } = req;
-  // console.log("Our initial query: ", query);
   // Loop through query object and only pass in queries that are not empty
   const filteredQuery = {};
   for (let key in query) {
@@ -116,26 +114,11 @@ app.get("/animals/mylist", async (req, res) => {
     res.status(404).json({ error: "Bad request" });
     return;
   }
-  //Results is an array of mongodb objects
+  // Results is an array of mongodb objects
   // Only give back the animalList
 
   res.status(200).json({ data: results[0].animalList });
 });
-
-// Authorization to be implemented
-// app.get("/search", (req, res) => {
-//   console.log(req.isAuthenticated());
-//   // If not authenticated, take user to home page
-//   if (!req.isAuthenticated()) {
-//     res.redirect("/");
-//   } else {
-//     res.sendFile(path.join(__dirname, "../public/index.html"), (err) => {
-//       if (err) {
-//         console.log(err);
-//       }
-//     });
-//   }
-// });
 
 //------ Last route to render our react page no matter what page ----- //
 app.get("/*", (req, res) => {

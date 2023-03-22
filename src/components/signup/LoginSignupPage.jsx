@@ -23,16 +23,13 @@ const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
   const [showError, setShowError] = useState(false);
   const navigate = useNavigate(); // Custom hook from react-router-dom
   const handleSubmit = (values) => {
-    console.log(values);
     axios
       .post("http://localhost:8080/auth/login_signup", values)
       .then((res) => {
-        // console.log(res.data.success);
         setSession(res.data.success);
         setIsLoggedIn(true);
         setShowError(false);
         navigate("/search"); //navigates you back to home page
-        // Todo: check to see if list has items, if it does go to list
         // Successful login should take you to either search or my list
       })
       .catch(() => {
@@ -67,7 +64,6 @@ const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
                 .required("Password is required"),
             })}
             onSubmit={(values, { setSubmitting }) => {
-              // console.log("Our values are: ", JSON.stringify(values, null, 2));
               handleSubmit(values);
               setSubmitting(false); // To finish off the cycle
             }}
@@ -83,7 +79,6 @@ const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
                       Incorrect Username/Password or User Already Exists
                     </div>
                   ) : null}
-
                 </div>
               </Form>
             )}
@@ -95,4 +90,3 @@ const LoginSignupPage = ({ setIsLoggedIn, setSession, session }) => {
 };
 
 export default LoginSignupPage;
-

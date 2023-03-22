@@ -8,16 +8,12 @@ import PetDetailPage from "./pets/PetDetailPage";
 import ResultsPage from "./search/ResultsPage";
 import MyListPage from "./search/MyListPage";
 import testData from "./testdata";
-// console.log("Our test data", testData);
 
 const App = () => {
   const [animalData, setAnimalData] = useState(testData.animals);
   const [nextPage, setNextPage] = useState({}); //takes an object with href and string
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Set login state
   const [session, setSession] = useState("");
-  console.log(session);
-  console.log(isLoggedIn);
-  console.log("Next page state data:", nextPage);
 
   return (
     <div className="app-container">
@@ -62,7 +58,6 @@ const App = () => {
           />
           <Route path="/mylist" element={<MyListPage session={session} />} />
           <Route path="/petdetails" element={<PetDetailPage />} />
-          {/* <Route path="/*" element={<HomePage />} /> */}
         </Routes>
       </div>
     </div>

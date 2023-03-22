@@ -14,16 +14,13 @@ const ResultsPage = ({
   const [showIndex, setShowIndex] = useState(20); // Show the first 20
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef(null);
-  console.log(showIndex);
-  // console.log("ResultsPage, data:", animalData);
+
   useEffect(() => {
     const filteredAnimals = animalData.filter((animal) => {
       return animal.primary_photo_cropped !== null;
     });
     setCurrentAnimals([...filteredAnimals]);
-    console.log("Filtered animals", filteredAnimals);
   }, [animalData]);
-  console.log("Current animals", currentAnimals);
 
   // Loads more animals on click of more animals button
   const handleMoreClick = () => {
@@ -48,7 +45,6 @@ const ResultsPage = ({
           },
         })
         .then(({ data }) => {
-          console.log("i am still here");
           setAnimalData([...animalData, ...data.animals]);
           setNextPage({ href: data.pagination._links.next.href });
           setLoading(false);
@@ -82,7 +78,6 @@ const ResultsPage = ({
       setShowIndex(showIndex + 10);
       if (loading === false) {
         // Prevents multiple calls to server and will reset when server responds with data
-        // console.log("Current length of animals:", currentAnimals.length);
         if (currentAnimals.length - showIndex < 100) {
           handleMoreClick();
         }
@@ -115,7 +110,6 @@ const ResultsPage = ({
       >
         {petCardElements}
       </div>
-      {/* <button onClick={handleMoreClick}>Load More Animals</button> */}
     </div>
   );
 };
