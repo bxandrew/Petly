@@ -55,7 +55,6 @@ const getToken = async () => {
     });
 
   token = result;
-  console.log(token);
 };
 getToken(); // Async token
 // ==================================================
@@ -68,7 +67,6 @@ app.get("/animals", async (req, res) => {
   for (let key in query) {
     if (query[key].length > 0) filteredQuery[key] = query[key];
   }
-  console.log("Our filtered query: ", filteredQuery);
 
   await axios
     .get("http://api.petfinder.com/v2/animals", {
@@ -87,7 +85,6 @@ app.get("/animals", async (req, res) => {
 
 app.get("/animals/more", async (req, res) => {
   const { href } = req.query;
-  console.log(req.query);
 
   await axios
     .get(`http://api.petfinder.com${href}`, {
@@ -106,9 +103,7 @@ app.get("/animals/more", async (req, res) => {
 // Get the animals for My List Page
 app.get("/animals/mylist", async (req, res) => {
   const { userId } = req.query;
-  console.log(userId);
   let results = await List.find({ userId: userId });
-  console.log(results);
 
   if (!results.length) {
     res.status(404).json({ error: "Bad request" });
