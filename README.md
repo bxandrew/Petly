@@ -18,6 +18,7 @@ Petly is a web application that allows users to find pets/animals in need of hom
 
 ![alt text](https://github.com/bxandrew/Petly/blob/main/readmepics/search.png)
 - Ready to rescue a pet/animal? Search for your next friend by searching via Location (Zipcode), Gender, Animal Type, or Breed. 
+  - An image carousel at the bottom displays the photos of the most recent postings to Petfinder API.
 
 ![alt text](https://github.com/bxandrew/Petly/blob/main/readmepics/searchresults1.png)
 - Pets/Animals searched are shown in order of most recent postings to PetfinderAPI filtered by the entered search criteria. 
